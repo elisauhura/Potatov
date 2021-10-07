@@ -20,6 +20,7 @@
 		4C7107AB270F256C00F2B687 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7107AA270F256C00F2B687 /* XCTest.framework */; };
 		4C7107BE270F5E6B00F2B687 /* libTestBench.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C5FC8AC270EB8BB00B1C18A /* libTestBench.dylib */; };
 		4C7107C4270F5E7200F2B687 /* UHRTestBenchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7107B3270F425300F2B687 /* UHRTestBenchTests.m */; };
+		4C906B83270F850700A9D4E2 /* UHRTestBenchScriptTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C906B82270F850700A9D4E2 /* UHRTestBenchScriptTests.m */; };
 		4CFA10B4270F714F0061CF37 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CFA10B3270F714F0061CF37 /* OCMock.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		4C7107AA270F256C00F2B687 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		4C7107B3270F425300F2B687 /* UHRTestBenchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UHRTestBenchTests.m; sourceTree = "<group>"; };
 		4C7107BA270F5E6B00F2B687 /* TestBenchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestBenchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C906B82270F850700A9D4E2 /* UHRTestBenchScriptTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UHRTestBenchScriptTests.m; sourceTree = "<group>"; };
 		4CFA10B3270F714F0061CF37 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = /Library/Frameworks/OCMock.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				4C7107B3270F425300F2B687 /* UHRTestBenchTests.m */,
+				4C906B82270F850700A9D4E2 /* UHRTestBenchScriptTests.m */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C7107C4270F5E7200F2B687 /* UHRTestBenchTests.m in Sources */,
+				4C906B83270F850700A9D4E2 /* UHRTestBenchScriptTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,6 +623,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -672,6 +677,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

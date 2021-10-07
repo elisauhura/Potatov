@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+
 #import "UHRPeeler.h"
 
 @interface UHRTestBenchScript : NSObject
@@ -15,7 +16,7 @@
 
 - (instancetype)init NS_UNAVAILABLE;
 
-- (void)useXCTestIntegration:(BOOL)flag;
+- (void)useXCTestIntegration:(BOOL)aFlag;
 
 - (BOOL)applyOnRiseChangesToModule:(id<UHRModuleInterface>)module atTime:(UHRTimeUnit)time;
 - (BOOL)applyOnFallChangesToModule:(id<UHRModuleInterface>)module atTime:(UHRTimeUnit)time;

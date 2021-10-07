@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+
 #import "UHRPeeler.h"
 
 @class UHRTestBenchScript;
@@ -14,6 +15,6 @@
 @interface UHRTestBench : NSObject
 
 - (instancetype)initWithModule:(id<UHRModuleInterface>)module withScript:(UHRTestBenchScript *)script;
-- (void)runTestBenchUpToTime:(UHRTimeUnit)time;
+- (BOOL)runTestBenchUpToTime:(UHRTimeUnit)time;
 
 @end

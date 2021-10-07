@@ -5,6 +5,7 @@
 //  Created by Elisa Silva on 07/10/21.
 //  Copyright © 2021 Uhura. All rights reserved.
 //
+
 #import <XCTest/XCTest.h>
 
 #import "UHRTestBench.h"
@@ -30,7 +31,7 @@
     return self;
 }
 
-- (void)runTestBenchUpToTime:(UHRTimeUnit)time {
+- (BOOL)runTestBenchUpToTime:(UHRTimeUnit)time {
     UHRTimeUnit simulationTime = 0;
     while(simulationTime < time) {
         [_module pokeSignal:[_module clockSignal] withValue:1];
@@ -43,12 +44,13 @@
         [_module evaluateStateAtTime:15+simulationTime*10];
         [_script checkOnLowContrainsForModule:_module atTime:simulationTime];
         
-        if([_script passScriptForModule:_module atTime:simulationTime])
+        if([_script passScriptForModule:_module atTime:simulationTime]) {
             break;
+        }
         
         simulationTime++;
     }
-    XCTAssertLessThan(simulationTime, time, @"Simulation time reached limit of %u", time);
+    return simulationTime < time;
 }
 
 @end
