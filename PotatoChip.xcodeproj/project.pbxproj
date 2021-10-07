@@ -41,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C32CC7E270F68C300E6A1E7 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		4C5FC867270EB78200B1C18A /* PI Sim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PI Sim.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C5FC869270EB78200B1C18A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4C5FC86A270EB78200B1C18A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -167,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				4C5FC8B5270EB94E00B1C18A /* README.md */,
+				4C32CC7E270F68C300E6A1E7 /* .gitignore */,
 				4C5FC862270EB74C00B1C18A /* Modules */,
 				4C5FC898270EB85300B1C18A /* Peeler */,
 				4C5FC8AD270EB8BB00B1C18A /* TestBench */,
