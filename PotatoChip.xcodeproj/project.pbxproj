@@ -7,177 +7,280 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4CE52D74270E96CA008D5981 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE52D73270E96CA008D5981 /* AppDelegate.m */; };
-		4CE52D76270E96CB008D5981 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CE52D75270E96CB008D5981 /* Assets.xcassets */; };
-		4CE52D79270E96CB008D5981 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CE52D77270E96CB008D5981 /* MainMenu.xib */; };
-		4CE52D7B270E96CB008D5981 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE52D7A270E96CB008D5981 /* main.m */; };
-		4CE52D86270E96CC008D5981 /* PotatoChipTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE52D85270E96CC008D5981 /* PotatoChipTests.m */; };
-		4CE52D90270E96CC008D5981 /* PotatoChipUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE52D8F270E96CC008D5981 /* PotatoChipUITests.m */; };
-		4CE52D92270E96CC008D5981 /* PotatoChipUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE52D91270E96CC008D5981 /* PotatoChipUITestsLaunchTests.m */; };
+		4C5FC86B270EB78200B1C18A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5FC86A270EB78200B1C18A /* AppDelegate.m */; };
+		4C5FC86D270EB78300B1C18A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C5FC86C270EB78300B1C18A /* Assets.xcassets */; };
+		4C5FC870270EB78300B1C18A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C5FC86E270EB78300B1C18A /* MainMenu.xib */; };
+		4C5FC872270EB78300B1C18A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5FC871270EB78300B1C18A /* main.m */; };
+		4C5FC89A270EB85300B1C18A /* UHRPeeler.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C5FC899270EB85300B1C18A /* UHRPeeler.h */; };
+		4C5FC8AF270EB8BB00B1C18A /* UHRTestBench.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C5FC8AE270EB8BB00B1C18A /* UHRTestBench.h */; };
+		4C5FC8B1270EB8BB00B1C18A /* UHRTestBench.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5FC8B0270EB8BB00B1C18A /* UHRTestBench.m */; };
+		4C5FC8B7270EB9E400B1C18A /* UHRModuleInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C5FC8B6270EB9E400B1C18A /* UHRModuleInterface.h */; };
+		4C7107A7270EBCD200F2B687 /* UHRTestBenchScript.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C7107A5270EBCD200F2B687 /* UHRTestBenchScript.h */; };
+		4C7107A8270EBCD200F2B687 /* UHRTestBenchScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7107A6270EBCD200F2B687 /* UHRTestBenchScript.m */; };
+		4C7107AB270F256C00F2B687 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7107AA270F256C00F2B687 /* XCTest.framework */; };
+		4C7107BE270F5E6B00F2B687 /* libTestBench.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C5FC8AC270EB8BB00B1C18A /* libTestBench.dylib */; };
+		4C7107C4270F5E7200F2B687 /* UHRTestBenchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7107B3270F425300F2B687 /* UHRTestBenchTests.m */; };
+		4C7107C9270F613E00F2B687 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7107AD270F3A9800F2B687 /* OCMock.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4CE52D82270E96CC008D5981 /* PBXContainerItemProxy */ = {
+		4C7107A3270EBBA800F2B687 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4CE52D67270E96CA008D5981 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 4CE52D6E270E96CA008D5981;
-			remoteInfo = PotatoChip;
+			remoteGlobalIDString = 4C5FC896270EB85300B1C18A;
+			remoteInfo = Peeler;
 		};
-		4CE52D8C270E96CC008D5981 /* PBXContainerItemProxy */ = {
+		4C7107BF270F5E6B00F2B687 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4CE52D67270E96CA008D5981 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 4CE52D6E270E96CA008D5981;
-			remoteInfo = PotatoChip;
+			remoteGlobalIDString = 4C5FC8AB270EB8BB00B1C18A;
+			remoteInfo = TestBench;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4CE52D6F270E96CA008D5981 /* PotatoChip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PotatoChip.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4CE52D72270E96CA008D5981 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		4CE52D73270E96CA008D5981 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4CE52D75270E96CB008D5981 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4CE52D78270E96CB008D5981 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		4CE52D7A270E96CB008D5981 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4CE52D7C270E96CB008D5981 /* PotatoChip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PotatoChip.entitlements; sourceTree = "<group>"; };
-		4CE52D81270E96CC008D5981 /* PotatoChipTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PotatoChipTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4CE52D85270E96CC008D5981 /* PotatoChipTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PotatoChipTests.m; sourceTree = "<group>"; };
-		4CE52D8B270E96CC008D5981 /* PotatoChipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PotatoChipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4CE52D8F270E96CC008D5981 /* PotatoChipUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PotatoChipUITests.m; sourceTree = "<group>"; };
-		4CE52D91270E96CC008D5981 /* PotatoChipUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PotatoChipUITestsLaunchTests.m; sourceTree = "<group>"; };
+		4C5FC867270EB78200B1C18A /* PI Sim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PI Sim.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C5FC869270EB78200B1C18A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4C5FC86A270EB78200B1C18A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4C5FC86C270EB78300B1C18A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4C5FC86F270EB78300B1C18A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		4C5FC871270EB78300B1C18A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4C5FC873270EB78300B1C18A /* PI_Sim.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PI_Sim.entitlements; sourceTree = "<group>"; };
+		4C5FC897270EB85300B1C18A /* libPeeler.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libPeeler.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C5FC899270EB85300B1C18A /* UHRPeeler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UHRPeeler.h; sourceTree = "<group>"; };
+		4C5FC8AC270EB8BB00B1C18A /* libTestBench.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libTestBench.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C5FC8AE270EB8BB00B1C18A /* UHRTestBench.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UHRTestBench.h; sourceTree = "<group>"; };
+		4C5FC8B0270EB8BB00B1C18A /* UHRTestBench.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UHRTestBench.m; sourceTree = "<group>"; };
+		4C5FC8B5270EB94E00B1C18A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4C5FC8B6270EB9E400B1C18A /* UHRModuleInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UHRModuleInterface.h; sourceTree = "<group>"; };
+		4C7107A5270EBCD200F2B687 /* UHRTestBenchScript.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UHRTestBenchScript.h; sourceTree = "<group>"; };
+		4C7107A6270EBCD200F2B687 /* UHRTestBenchScript.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UHRTestBenchScript.m; sourceTree = "<group>"; };
+		4C7107AA270F256C00F2B687 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		4C7107AD270F3A9800F2B687 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCMock.framework; sourceTree = "<group>"; };
+		4C7107B3270F425300F2B687 /* UHRTestBenchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UHRTestBenchTests.m; sourceTree = "<group>"; };
+		4C7107BA270F5E6B00F2B687 /* TestBenchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestBenchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4CE52D6C270E96CA008D5981 /* Frameworks */ = {
+		4C5FC864270EB78200B1C18A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4CE52D7E270E96CC008D5981 /* Frameworks */ = {
+		4C5FC895270EB85300B1C18A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4CE52D88270E96CC008D5981 /* Frameworks */ = {
+		4C5FC8AA270EB8BB00B1C18A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C7107AB270F256C00F2B687 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C7107B7270F5E6B00F2B687 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C7107C9270F613E00F2B687 /* OCMock.framework in Frameworks */,
+				4C7107BE270F5E6B00F2B687 /* libTestBench.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C5FC862270EB74C00B1C18A /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		4C5FC868270EB78200B1C18A /* PI Sim */ = {
+			isa = PBXGroup;
+			children = (
+				4C5FC869270EB78200B1C18A /* AppDelegate.h */,
+				4C5FC86A270EB78200B1C18A /* AppDelegate.m */,
+				4C5FC86C270EB78300B1C18A /* Assets.xcassets */,
+				4C5FC86E270EB78300B1C18A /* MainMenu.xib */,
+				4C5FC871270EB78300B1C18A /* main.m */,
+				4C5FC873270EB78300B1C18A /* PI_Sim.entitlements */,
+			);
+			path = "PI Sim";
+			sourceTree = "<group>";
+		};
+		4C5FC898270EB85300B1C18A /* Peeler */ = {
+			isa = PBXGroup;
+			children = (
+				4C5FC899270EB85300B1C18A /* UHRPeeler.h */,
+				4C5FC8B6270EB9E400B1C18A /* UHRModuleInterface.h */,
+			);
+			path = Peeler;
+			sourceTree = "<group>";
+		};
+		4C5FC8AD270EB8BB00B1C18A /* TestBench */ = {
+			isa = PBXGroup;
+			children = (
+				4C7107B2270F422C00F2B687 /* Tests */,
+				4C5FC8AE270EB8BB00B1C18A /* UHRTestBench.h */,
+				4C5FC8B0270EB8BB00B1C18A /* UHRTestBench.m */,
+				4C7107A5270EBCD200F2B687 /* UHRTestBenchScript.h */,
+				4C7107A6270EBCD200F2B687 /* UHRTestBenchScript.m */,
+			);
+			path = TestBench;
+			sourceTree = "<group>";
+		};
+		4C7107A9270F256C00F2B687 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C7107AA270F256C00F2B687 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C7107AC270F3A9800F2B687 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				4C7107AD270F3A9800F2B687 /* OCMock.framework */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		4C7107B2270F422C00F2B687 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				4C7107B3270F425300F2B687 /* UHRTestBenchTests.m */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
 		4CE52D66270E96CA008D5981 = {
 			isa = PBXGroup;
 			children = (
-				4CE52D71270E96CA008D5981 /* PotatoChip */,
-				4CE52D84270E96CC008D5981 /* PotatoChipTests */,
-				4CE52D8E270E96CC008D5981 /* PotatoChipUITests */,
+				4C5FC8B5270EB94E00B1C18A /* README.md */,
+				4C5FC862270EB74C00B1C18A /* Modules */,
+				4C5FC898270EB85300B1C18A /* Peeler */,
+				4C5FC8AD270EB8BB00B1C18A /* TestBench */,
+				4C5FC868270EB78200B1C18A /* PI Sim */,
+				4C7107AC270F3A9800F2B687 /* External */,
 				4CE52D70270E96CA008D5981 /* Products */,
+				4C7107A9270F256C00F2B687 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		4CE52D70270E96CA008D5981 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4CE52D6F270E96CA008D5981 /* PotatoChip.app */,
-				4CE52D81270E96CC008D5981 /* PotatoChipTests.xctest */,
-				4CE52D8B270E96CC008D5981 /* PotatoChipUITests.xctest */,
+				4C5FC867270EB78200B1C18A /* PI Sim.app */,
+				4C5FC897270EB85300B1C18A /* libPeeler.dylib */,
+				4C5FC8AC270EB8BB00B1C18A /* libTestBench.dylib */,
+				4C7107BA270F5E6B00F2B687 /* TestBenchTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4CE52D71270E96CA008D5981 /* PotatoChip */ = {
-			isa = PBXGroup;
-			children = (
-				4CE52D72270E96CA008D5981 /* AppDelegate.h */,
-				4CE52D73270E96CA008D5981 /* AppDelegate.m */,
-				4CE52D75270E96CB008D5981 /* Assets.xcassets */,
-				4CE52D77270E96CB008D5981 /* MainMenu.xib */,
-				4CE52D7A270E96CB008D5981 /* main.m */,
-				4CE52D7C270E96CB008D5981 /* PotatoChip.entitlements */,
-			);
-			path = PotatoChip;
-			sourceTree = "<group>";
-		};
-		4CE52D84270E96CC008D5981 /* PotatoChipTests */ = {
-			isa = PBXGroup;
-			children = (
-				4CE52D85270E96CC008D5981 /* PotatoChipTests.m */,
-			);
-			path = PotatoChipTests;
-			sourceTree = "<group>";
-		};
-		4CE52D8E270E96CC008D5981 /* PotatoChipUITests */ = {
-			isa = PBXGroup;
-			children = (
-				4CE52D8F270E96CC008D5981 /* PotatoChipUITests.m */,
-				4CE52D91270E96CC008D5981 /* PotatoChipUITestsLaunchTests.m */,
-			);
-			path = PotatoChipUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		4C5FC893270EB85300B1C18A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C5FC8B7270EB9E400B1C18A /* UHRModuleInterface.h in Headers */,
+				4C5FC89A270EB85300B1C18A /* UHRPeeler.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C5FC8A8270EB8BB00B1C18A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C7107A7270EBCD200F2B687 /* UHRTestBenchScript.h in Headers */,
+				4C5FC8AF270EB8BB00B1C18A /* UHRTestBench.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		4CE52D6E270E96CA008D5981 /* PotatoChip */ = {
+		4C5FC866270EB78200B1C18A /* PI Sim */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4CE52D95270E96CC008D5981 /* Build configuration list for PBXNativeTarget "PotatoChip" */;
+			buildConfigurationList = 4C5FC88A270EB78400B1C18A /* Build configuration list for PBXNativeTarget "PI Sim" */;
 			buildPhases = (
-				4CE52D6B270E96CA008D5981 /* Sources */,
-				4CE52D6C270E96CA008D5981 /* Frameworks */,
-				4CE52D6D270E96CA008D5981 /* Resources */,
+				4C5FC863270EB78200B1C18A /* Sources */,
+				4C5FC864270EB78200B1C18A /* Frameworks */,
+				4C5FC865270EB78200B1C18A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = PotatoChip;
-			productName = PotatoChip;
-			productReference = 4CE52D6F270E96CA008D5981 /* PotatoChip.app */;
+			name = "PI Sim";
+			productName = "PI Sim";
+			productReference = 4C5FC867270EB78200B1C18A /* PI Sim.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4CE52D80270E96CC008D5981 /* PotatoChipTests */ = {
+		4C5FC896270EB85300B1C18A /* Peeler */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4CE52D98270E96CC008D5981 /* Build configuration list for PBXNativeTarget "PotatoChipTests" */;
+			buildConfigurationList = 4C5FC89D270EB85300B1C18A /* Build configuration list for PBXNativeTarget "Peeler" */;
 			buildPhases = (
-				4CE52D7D270E96CC008D5981 /* Sources */,
-				4CE52D7E270E96CC008D5981 /* Frameworks */,
-				4CE52D7F270E96CC008D5981 /* Resources */,
+				4C5FC893270EB85300B1C18A /* Headers */,
+				4C5FC894270EB85300B1C18A /* Sources */,
+				4C5FC895270EB85300B1C18A /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				4CE52D83270E96CC008D5981 /* PBXTargetDependency */,
 			);
-			name = PotatoChipTests;
-			productName = PotatoChipTests;
-			productReference = 4CE52D81270E96CC008D5981 /* PotatoChipTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
+			name = Peeler;
+			productName = Peeler;
+			productReference = 4C5FC897270EB85300B1C18A /* libPeeler.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
 		};
-		4CE52D8A270E96CC008D5981 /* PotatoChipUITests */ = {
+		4C5FC8AB270EB8BB00B1C18A /* TestBench */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4CE52D9B270E96CC008D5981 /* Build configuration list for PBXNativeTarget "PotatoChipUITests" */;
+			buildConfigurationList = 4C5FC8B2270EB8BB00B1C18A /* Build configuration list for PBXNativeTarget "TestBench" */;
 			buildPhases = (
-				4CE52D87270E96CC008D5981 /* Sources */,
-				4CE52D88270E96CC008D5981 /* Frameworks */,
-				4CE52D89270E96CC008D5981 /* Resources */,
+				4C5FC8A8270EB8BB00B1C18A /* Headers */,
+				4C5FC8A9270EB8BB00B1C18A /* Sources */,
+				4C5FC8AA270EB8BB00B1C18A /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				4CE52D8D270E96CC008D5981 /* PBXTargetDependency */,
+				4C7107A4270EBBA800F2B687 /* PBXTargetDependency */,
 			);
-			name = PotatoChipUITests;
-			productName = PotatoChipUITests;
-			productReference = 4CE52D8B270E96CC008D5981 /* PotatoChipUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
+			name = TestBench;
+			productName = TestBench;
+			productReference = 4C5FC8AC270EB8BB00B1C18A /* libTestBench.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		4C7107B9270F5E6B00F2B687 /* TestBenchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C7107C1270F5E6B00F2B687 /* Build configuration list for PBXNativeTarget "TestBenchTests" */;
+			buildPhases = (
+				4C7107B6270F5E6B00F2B687 /* Sources */,
+				4C7107B7270F5E6B00F2B687 /* Frameworks */,
+				4C7107B8270F5E6B00F2B687 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4C7107C0270F5E6B00F2B687 /* PBXTargetDependency */,
+			);
+			name = TestBenchTests;
+			productName = TestBenchTests;
+			productReference = 4C7107BA270F5E6B00F2B687 /* TestBenchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -186,18 +289,21 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				CLASSPREFIX = UHR;
 				LastUpgradeCheck = 1300;
+				ORGANIZATIONNAME = Uhura;
 				TargetAttributes = {
-					4CE52D6E270E96CA008D5981 = {
+					4C5FC866270EB78200B1C18A = {
 						CreatedOnToolsVersion = 13.0;
 					};
-					4CE52D80270E96CC008D5981 = {
+					4C5FC896270EB85300B1C18A = {
 						CreatedOnToolsVersion = 13.0;
-						TestTargetID = 4CE52D6E270E96CA008D5981;
 					};
-					4CE52D8A270E96CC008D5981 = {
+					4C5FC8AB270EB8BB00B1C18A = {
 						CreatedOnToolsVersion = 13.0;
-						TestTargetID = 4CE52D6E270E96CA008D5981;
+					};
+					4C7107B9270F5E6B00F2B687 = {
+						CreatedOnToolsVersion = 13.0;
 					};
 				};
 			};
@@ -214,31 +320,25 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4CE52D6E270E96CA008D5981 /* PotatoChip */,
-				4CE52D80270E96CC008D5981 /* PotatoChipTests */,
-				4CE52D8A270E96CC008D5981 /* PotatoChipUITests */,
+				4C5FC866270EB78200B1C18A /* PI Sim */,
+				4C5FC896270EB85300B1C18A /* Peeler */,
+				4C5FC8AB270EB8BB00B1C18A /* TestBench */,
+				4C7107B9270F5E6B00F2B687 /* TestBenchTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4CE52D6D270E96CA008D5981 /* Resources */ = {
+		4C5FC865270EB78200B1C18A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CE52D76270E96CB008D5981 /* Assets.xcassets in Resources */,
-				4CE52D79270E96CB008D5981 /* MainMenu.xib in Resources */,
+				4C5FC86D270EB78300B1C18A /* Assets.xcassets in Resources */,
+				4C5FC870270EB78300B1C18A /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4CE52D7F270E96CC008D5981 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4CE52D89270E96CC008D5981 /* Resources */ = {
+		4C7107B8270F5E6B00F2B687 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -248,52 +348,59 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4CE52D6B270E96CA008D5981 /* Sources */ = {
+		4C5FC863270EB78200B1C18A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CE52D7B270E96CB008D5981 /* main.m in Sources */,
-				4CE52D74270E96CA008D5981 /* AppDelegate.m in Sources */,
+				4C5FC872270EB78300B1C18A /* main.m in Sources */,
+				4C5FC86B270EB78200B1C18A /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4CE52D7D270E96CC008D5981 /* Sources */ = {
+		4C5FC894270EB85300B1C18A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CE52D86270E96CC008D5981 /* PotatoChipTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4CE52D87270E96CC008D5981 /* Sources */ = {
+		4C5FC8A9270EB8BB00B1C18A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CE52D90270E96CC008D5981 /* PotatoChipUITests.m in Sources */,
-				4CE52D92270E96CC008D5981 /* PotatoChipUITestsLaunchTests.m in Sources */,
+				4C5FC8B1270EB8BB00B1C18A /* UHRTestBench.m in Sources */,
+				4C7107A8270EBCD200F2B687 /* UHRTestBenchScript.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C7107B6270F5E6B00F2B687 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C7107C4270F5E7200F2B687 /* UHRTestBenchTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4CE52D83270E96CC008D5981 /* PBXTargetDependency */ = {
+		4C7107A4270EBBA800F2B687 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4CE52D6E270E96CA008D5981 /* PotatoChip */;
-			targetProxy = 4CE52D82270E96CC008D5981 /* PBXContainerItemProxy */;
+			target = 4C5FC896270EB85300B1C18A /* Peeler */;
+			targetProxy = 4C7107A3270EBBA800F2B687 /* PBXContainerItemProxy */;
 		};
-		4CE52D8D270E96CC008D5981 /* PBXTargetDependency */ = {
+		4C7107C0270F5E6B00F2B687 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4CE52D6E270E96CA008D5981 /* PotatoChip */;
-			targetProxy = 4CE52D8C270E96CC008D5981 /* PBXContainerItemProxy */;
+			target = 4C5FC8AB270EB8BB00B1C18A /* TestBench */;
+			targetProxy = 4C7107BF270F5E6B00F2B687 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4CE52D77270E96CB008D5981 /* MainMenu.xib */ = {
+		4C5FC86E270EB78300B1C18A /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4CE52D78270E96CB008D5981 /* Base */,
+				4C5FC86F270EB78300B1C18A /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -301,6 +408,160 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4C5FC88B270EB78400B1C18A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "PI Sim/PI_Sim.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LDL4S5S8SE;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainNibFile = MainMenu;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "cc.uhura.PI-Sim";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		4C5FC88C270EB78400B1C18A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "PI Sim/PI_Sim.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LDL4S5S8SE;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainNibFile = MainMenu;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "cc.uhura.PI-Sim";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+		4C5FC89E270EB85300B1C18A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LDL4S5S8SE;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4C5FC89F270EB85300B1C18A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LDL4S5S8SE;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		4C5FC8B3270EB8BB00B1C18A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LDL4S5S8SE;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4C5FC8B4270EB8BB00B1C18A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LDL4S5S8SE;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		4C7107C2270F5E6B00F2B687 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LDL4S5S8SE;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/External",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+					$SRCROOT/External,
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.uhura.TestBenchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+			};
+			name = Debug;
+		};
+		4C7107C3270F5E6B00F2B687 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LDL4S5S8SE;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/External",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+					$SRCROOT/External,
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.uhura.TestBenchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+			};
+			name = Release;
+		};
 		4CE52D93270E96CC008D5981 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -412,181 +673,50 @@
 			};
 			name = Release;
 		};
-		4CE52D96270E96CC008D5981 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = PotatoChip/PotatoChip.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = LDL4S5S8SE;
-				ENABLE_HARDENED_RUNTIME = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMainNibFile = MainMenu;
-				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.uhura.PotatoChip;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-			};
-			name = Debug;
-		};
-		4CE52D97270E96CC008D5981 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = PotatoChip/PotatoChip.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = LDL4S5S8SE;
-				ENABLE_HARDENED_RUNTIME = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMainNibFile = MainMenu;
-				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.uhura.PotatoChip;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-			};
-			name = Release;
-		};
-		4CE52D99270E96CC008D5981 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = LDL4S5S8SE;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.3;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.uhura.PotatoChipTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PotatoChip.app/Contents/MacOS/PotatoChip";
-			};
-			name = Debug;
-		};
-		4CE52D9A270E96CC008D5981 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = LDL4S5S8SE;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.3;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.uhura.PotatoChipTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PotatoChip.app/Contents/MacOS/PotatoChip";
-			};
-			name = Release;
-		};
-		4CE52D9C270E96CC008D5981 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = LDL4S5S8SE;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.uhura.PotatoChipUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				TEST_TARGET_NAME = PotatoChip;
-			};
-			name = Debug;
-		};
-		4CE52D9D270E96CC008D5981 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = LDL4S5S8SE;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.uhura.PotatoChipUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				TEST_TARGET_NAME = PotatoChip;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4C5FC88A270EB78400B1C18A /* Build configuration list for PBXNativeTarget "PI Sim" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C5FC88B270EB78400B1C18A /* Debug */,
+				4C5FC88C270EB78400B1C18A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C5FC89D270EB85300B1C18A /* Build configuration list for PBXNativeTarget "Peeler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C5FC89E270EB85300B1C18A /* Debug */,
+				4C5FC89F270EB85300B1C18A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C5FC8B2270EB8BB00B1C18A /* Build configuration list for PBXNativeTarget "TestBench" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C5FC8B3270EB8BB00B1C18A /* Debug */,
+				4C5FC8B4270EB8BB00B1C18A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C7107C1270F5E6B00F2B687 /* Build configuration list for PBXNativeTarget "TestBenchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C7107C2270F5E6B00F2B687 /* Debug */,
+				4C7107C3270F5E6B00F2B687 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4CE52D6A270E96CA008D5981 /* Build configuration list for PBXProject "PotatoChip" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4CE52D93270E96CC008D5981 /* Debug */,
 				4CE52D94270E96CC008D5981 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4CE52D95270E96CC008D5981 /* Build configuration list for PBXNativeTarget "PotatoChip" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4CE52D96270E96CC008D5981 /* Debug */,
-				4CE52D97270E96CC008D5981 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4CE52D98270E96CC008D5981 /* Build configuration list for PBXNativeTarget "PotatoChipTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4CE52D99270E96CC008D5981 /* Debug */,
-				4CE52D9A270E96CC008D5981 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4CE52D9B270E96CC008D5981 /* Build configuration list for PBXNativeTarget "PotatoChipUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4CE52D9C270E96CC008D5981 /* Debug */,
-				4CE52D9D270E96CC008D5981 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -4,10 +4,58 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>PI Sim.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+		<key>Peeler.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>PotatoChip.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>TestBench.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>TestBenchTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>4C5FC866270EB78200B1C18A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4C5FC877270EB78400B1C18A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4C5FC896270EB85300B1C18A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4C5FC8AB270EB8BB00B1C18A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4C7107B9270F5E6B00F2B687</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

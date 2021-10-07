@@ -1,8 +1,8 @@
 //
 //  main.m
-//  PotatoChip
+//  PI Sim
 //
-//  Created by Elisa Silva on 06/10/21.
+//  Created by Elisa Silva on 07/10/21.
 //
 
 #import <Cocoa/Cocoa.h>
