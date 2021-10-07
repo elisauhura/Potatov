@@ -20,7 +20,7 @@
 		4C7107AB270F256C00F2B687 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7107AA270F256C00F2B687 /* XCTest.framework */; };
 		4C7107BE270F5E6B00F2B687 /* libTestBench.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C5FC8AC270EB8BB00B1C18A /* libTestBench.dylib */; };
 		4C7107C4270F5E7200F2B687 /* UHRTestBenchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7107B3270F425300F2B687 /* UHRTestBenchTests.m */; };
-		4C7107C9270F613E00F2B687 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7107AD270F3A9800F2B687 /* OCMock.framework */; };
+		4CFA10B4270F714F0061CF37 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CFA10B3270F714F0061CF37 /* OCMock.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4C32CC7E270F68C300E6A1E7 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		4C5FC867270EB78200B1C18A /* PI Sim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PI Sim.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C5FC869270EB78200B1C18A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4C5FC86A270EB78200B1C18A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -59,9 +58,9 @@
 		4C7107A5270EBCD200F2B687 /* UHRTestBenchScript.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UHRTestBenchScript.h; sourceTree = "<group>"; };
 		4C7107A6270EBCD200F2B687 /* UHRTestBenchScript.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UHRTestBenchScript.m; sourceTree = "<group>"; };
 		4C7107AA270F256C00F2B687 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		4C7107AD270F3A9800F2B687 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCMock.framework; sourceTree = "<group>"; };
 		4C7107B3270F425300F2B687 /* UHRTestBenchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UHRTestBenchTests.m; sourceTree = "<group>"; };
 		4C7107BA270F5E6B00F2B687 /* TestBenchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestBenchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CFA10B3270F714F0061CF37 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = /Library/Frameworks/OCMock.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C7107C9270F613E00F2B687 /* OCMock.framework in Frameworks */,
+				4CFA10B4270F714F0061CF37 /* OCMock.framework in Frameworks */,
 				4C7107BE270F5E6B00F2B687 /* libTestBench.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,17 +142,10 @@
 		4C7107A9270F256C00F2B687 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4CFA10B3270F714F0061CF37 /* OCMock.framework */,
 				4C7107AA270F256C00F2B687 /* XCTest.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		4C7107AC270F3A9800F2B687 /* External */ = {
-			isa = PBXGroup;
-			children = (
-				4C7107AD270F3A9800F2B687 /* OCMock.framework */,
-			);
-			path = External;
 			sourceTree = "<group>";
 		};
 		4C7107B2270F422C00F2B687 /* Tests */ = {
@@ -168,12 +160,10 @@
 			isa = PBXGroup;
 			children = (
 				4C5FC8B5270EB94E00B1C18A /* README.md */,
-				4C32CC7E270F68C300E6A1E7 /* .gitignore */,
 				4C5FC862270EB74C00B1C18A /* Modules */,
 				4C5FC898270EB85300B1C18A /* Peeler */,
 				4C5FC8AD270EB8BB00B1C18A /* TestBench */,
 				4C5FC868270EB78200B1C18A /* PI Sim */,
-				4C7107AC270F3A9800F2B687 /* External */,
 				4CE52D70270E96CA008D5981 /* Products */,
 				4C7107A9270F256C00F2B687 /* Frameworks */,
 			);
@@ -523,14 +513,13 @@
 				DEVELOPMENT_TEAM = LDL4S5S8SE;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/External",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
-					$SRCROOT/External,
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = cc.uhura.TestBenchTests;
@@ -548,14 +537,13 @@
 				DEVELOPMENT_TEAM = LDL4S5S8SE;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/External",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
-					$SRCROOT/External,
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = cc.uhura.TestBenchTests;
