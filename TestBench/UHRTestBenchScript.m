@@ -116,8 +116,12 @@
 }
 
 - (BOOL)passScriptForModule:(id<UHRModuleInterface>)module atTime:(UHRTimeUnit)time {
-    if([_dictionary objectForKey:@(time)] != nil)
-        return YES;
+    NSDictionary *instructionsAtTime = [_dictionary objectForKey:@((int)time)];
+    if(instructionsAtTime != nil) {
+        if([instructionsAtTime objectForKey:@"pass"] != nil) {
+            return YES;
+        }
+    }
     return NO;
 }
 @end

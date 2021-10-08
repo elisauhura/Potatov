@@ -111,7 +111,7 @@
 
 - (void)testPass {
     XCTAssertTrue([_script passScriptForModule:nil atTime:10]);
-    XCTAssertFalse([_script passScriptForModule:nil atTime:9]);
+    XCTAssertFalse([_script passScriptForModule:nil atTime:5]);
 }
 
 @end

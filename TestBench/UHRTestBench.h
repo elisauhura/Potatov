@@ -14,6 +14,8 @@
 
 @interface UHRTestBench : NSObject
 
+- (instancetype)init NS_UNAVAILABLE;
+
 - (instancetype)initWithModule:(id<UHRModuleInterface>)module withScript:(UHRTestBenchScript *)script;
 - (BOOL)runTestBenchUpToTime:(UHRTimeUnit)time;
 

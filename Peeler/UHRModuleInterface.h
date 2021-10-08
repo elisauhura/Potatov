@@ -8,9 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef UInt32  UHRWord;
-typedef int     UHREnum;
-typedef UInt32  UHRTimeUnit;
+#import "UHRPeelerTypes.h"
 
 @protocol UHRModuleInterface <NSObject>
 
