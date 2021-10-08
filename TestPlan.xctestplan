@@ -1,0 +1,31 @@
+{
+  "configurations" : [
+    {
+      "id" : "25E589A3-AD3E-4F4F-A93B-D4D3A5D70313",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:PotatoChip.xcodeproj",
+        "identifier" : "4C906B95270FD95E00A9D4E2",
+        "name" : "PeelerTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:PotatoChip.xcodeproj",
+        "identifier" : "4C7107B9270F5E6B00F2B687",
+        "name" : "TestBenchTests"
+      }
+    }
+  ],
+  "version" : 1
+}
