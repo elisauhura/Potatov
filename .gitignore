@@ -1,0 +1,6 @@
+.DS_Store
+xcuserdata
+*.xcworkspace
+.build
+build
+Modules/obj_dir/*
