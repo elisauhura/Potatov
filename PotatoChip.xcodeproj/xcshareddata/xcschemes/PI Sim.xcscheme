@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4C5FC866270EB78200B1C18A"
-               BuildableName = "PI Sim.app"
-               BlueprintName = "PI Sim"
+               BuildableName = "Baked Potato.app"
+               BlueprintName = "Baked Potato"
                ReferencedContainer = "container:PotatoChip.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -65,8 +65,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4C5FC866270EB78200B1C18A"
-            BuildableName = "PI Sim.app"
-            BlueprintName = "PI Sim"
+            BuildableName = "Baked Potato.app"
+            BlueprintName = "Baked Potato"
             ReferencedContainer = "container:PotatoChip.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -82,8 +82,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4C5FC866270EB78200B1C18A"
-            BuildableName = "PI Sim.app"
-            BlueprintName = "PI Sim"
+            BuildableName = "Baked Potato.app"
+            BlueprintName = "Baked Potato"
             ReferencedContainer = "container:PotatoChip.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
