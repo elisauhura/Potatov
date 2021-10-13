@@ -4,3 +4,4 @@ xcuserdata
 .build
 build
 Modules/obj_dir/*
+*.dylib
