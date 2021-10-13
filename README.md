@@ -27,5 +27,4 @@ This project was developed using Xcode, so to do everything but sinthezise the h
 
 ### Modules
 
-Modules are tested using the Peeler Tests. Every module have a C interface that is wrapped by a module class and the module class has a test class inside the tests group
-under Peeler. Modules testing makes use of the `UHRTestBench` and `UHRTestBenchScript` classes.
+Modules are tested using the Peeler Tests. Every module have a C interface that is wrapped by a module class and the module class has a test class inside the tests group under Peeler. Modules testing makes use of the `UHRTestBench` and `UHRTestBenchScript` classes.
