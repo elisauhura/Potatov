@@ -1,5 +1,5 @@
 //
-//  UHRModuleCounter.h
+//  UHRModuleCounterInterface.h
 //  PotatoChip
 //
 //  Created by Elisa Silva on 07/10/21.

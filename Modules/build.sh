@@ -12,3 +12,4 @@ echo "Building from: " `pwd`
 
 make verilator.dylib
 make Counter.dylib
+make SoftMemory.dylib
