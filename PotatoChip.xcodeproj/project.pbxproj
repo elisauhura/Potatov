@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C26F6E92713EA87005A059E /* UHRModuleSoftMemoryInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C26F6E82713E928005A059E /* UHRModuleSoftMemoryInterface.h */; };
+		4C26F6EB2713EC21005A059E /* UHRModuleDispatch.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C26F6EA2713EC21005A059E /* UHRModuleDispatch.h */; };
+		4C26F6ED2713EE11005A059E /* UHRModuleDispatchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C26F6EC2713EE11005A059E /* UHRModuleDispatchManager.m */; };
+		4C26F7372714E073005A059E /* UHRSoftRamModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C26F7352714E073005A059E /* UHRSoftRamModel.h */; };
+		4C26F7382714E073005A059E /* UHRSoftRamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C26F7362714E073005A059E /* UHRSoftRamModel.m */; };
+		4C26F73A2714E227005A059E /* UHRModuleDispatchManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C26F7392714E227005A059E /* UHRModuleDispatchManagerTests.m */; };
+		4C26F73C271753C3005A059E /* UHRMemoryInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C26F73B271753C3005A059E /* UHRMemoryInterface.h */; };
 		4C5FC86B270EB78200B1C18A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5FC86A270EB78200B1C18A /* AppDelegate.m */; };
 		4C5FC86D270EB78300B1C18A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C5FC86C270EB78300B1C18A /* Assets.xcassets */; };
 		4C5FC870270EB78300B1C18A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C5FC86E270EB78300B1C18A /* MainMenu.xib */; };
@@ -58,6 +65,13 @@
 			remoteGlobalIDString = 4C5FC896270EB85300B1C18A;
 			remoteInfo = Peeler;
 		};
+		4CE91D702710C280000E4C50 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4CE52D67270E96CA008D5981 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C906B88270FCB7D00A9D4E2;
+			remoteInfo = "Module Builder";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -76,6 +90,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4C26F6E72713E928005A059E /* SoftMemory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SoftMemory.cpp; sourceTree = "<group>"; };
+		4C26F6E82713E928005A059E /* UHRModuleSoftMemoryInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UHRModuleSoftMemoryInterface.h; sourceTree = "<group>"; };
+		4C26F6EA2713EC21005A059E /* UHRModuleDispatch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UHRModuleDispatch.h; sourceTree = "<group>"; };
+		4C26F6EC2713EE11005A059E /* UHRModuleDispatchManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UHRModuleDispatchManager.m; sourceTree = "<group>"; };
+		4C26F7342714D80B005A059E /* UHRModuleDispatchManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UHRModuleDispatchManager.h; sourceTree = "<group>"; };
+		4C26F7352714E073005A059E /* UHRSoftRamModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UHRSoftRamModel.h; sourceTree = "<group>"; };
+		4C26F7362714E073005A059E /* UHRSoftRamModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UHRSoftRamModel.m; sourceTree = "<group>"; };
+		4C26F7392714E227005A059E /* UHRModuleDispatchManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UHRModuleDispatchManagerTests.m; sourceTree = "<group>"; };
+		4C26F73B271753C3005A059E /* UHRMemoryInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UHRMemoryInterface.h; sourceTree = "<group>"; };
 		4C5FC867270EB78200B1C18A /* Baked Potato.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Baked Potato.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C5FC869270EB78200B1C18A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4C5FC86A270EB78200B1C18A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -111,6 +134,9 @@
 		4C906BB1270FE2C000A9D4E2 /* UHRModuleCounterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UHRModuleCounterTests.m; sourceTree = "<group>"; };
 		4CE91D6E2710B372000E4C50 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
 		4CE91D6F2710B4E1000E4C50 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		4CE91D752710FCF9000E4C50 /* SoftMemory.v */ = {isa = PBXFileReference; lastKnownFileType = text; path = SoftMemory.v; sourceTree = "<group>"; };
+		4CE91D7727110026000E4C50 /* MemoryInterface.v */ = {isa = PBXFileReference; lastKnownFileType = text; path = MemoryInterface.v; sourceTree = "<group>"; };
+		4CE91D7827110FF6000E4C50 /* ModuleDispatch.v */ = {isa = PBXFileReference; lastKnownFileType = text; path = ModuleDispatch.v; sourceTree = "<group>"; };
 		4CFA10B3270F714F0061CF37 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = /Library/Frameworks/OCMock.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -161,10 +187,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C26F6EE2713EE40005A059E /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+				4C26F7342714D80B005A059E /* UHRModuleDispatchManager.h */,
+				4C26F6EC2713EE11005A059E /* UHRModuleDispatchManager.m */,
+				4C26F7352714E073005A059E /* UHRSoftRamModel.h */,
+				4C26F7362714E073005A059E /* UHRSoftRamModel.m */,
+			);
+			name = Runtime;
+			sourceTree = "<group>";
+		};
 		4C5FC862270EB74C00B1C18A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
 				4C906BA0270FD97A00A9D4E2 /* Object */,
+				4CE91D762710FFEF000E4C50 /* Define */,
 				4C906B86270FCA0E00A9D4E2 /* Description */,
 				4C906B85270FCA0300A9D4E2 /* Header */,
 				4C906B84270FC9EE00A9D4E2 /* Implementation */,
@@ -190,6 +228,7 @@
 		4C5FC898270EB85300B1C18A /* Peeler */ = {
 			isa = PBXGroup;
 			children = (
+				4C26F6EE2713EE40005A059E /* Runtime */,
 				4C906BA4270FDCA400A9D4E2 /* Modules */,
 				4C906B97270FD95E00A9D4E2 /* Tests */,
 				4C5FC899270EB85300B1C18A /* UHRPeeler.h */,
@@ -234,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				4C906B8E270FCF0A00A9D4E2 /* Counter.cpp */,
+				4C26F6E72713E928005A059E /* SoftMemory.cpp */,
 			);
 			name = Implementation;
 			sourceTree = "<group>";
@@ -242,6 +282,9 @@
 			isa = PBXGroup;
 			children = (
 				4C906B8F270FCF0A00A9D4E2 /* UHRModuleCounterInterface.h */,
+				4C26F6E82713E928005A059E /* UHRModuleSoftMemoryInterface.h */,
+				4C26F6EA2713EC21005A059E /* UHRModuleDispatch.h */,
+				4C26F73B271753C3005A059E /* UHRMemoryInterface.h */,
 			);
 			name = Header;
 			sourceTree = "<group>";
@@ -250,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				4C906B8D270FCCCD00A9D4E2 /* Counter.v */,
+				4CE91D752710FCF9000E4C50 /* SoftMemory.v */,
 			);
 			name = Description;
 			sourceTree = "<group>";
@@ -258,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				4C906BB1270FE2C000A9D4E2 /* UHRModuleCounterTests.m */,
+				4C26F7392714E227005A059E /* UHRModuleDispatchManagerTests.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -284,8 +329,8 @@
 			isa = PBXGroup;
 			children = (
 				4CE91D6F2710B4E1000E4C50 /* .gitignore */,
-				4CE91D6E2710B372000E4C50 /* TestPlan.xctestplan */,
 				4C5FC8B5270EB94E00B1C18A /* README.md */,
+				4CE91D6E2710B372000E4C50 /* TestPlan.xctestplan */,
 				4C5FC862270EB74C00B1C18A /* Modules */,
 				4C5FC898270EB85300B1C18A /* Peeler */,
 				4C5FC8AD270EB8BB00B1C18A /* TestBench */,
@@ -307,6 +352,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		4CE91D762710FFEF000E4C50 /* Define */ = {
+			isa = PBXGroup;
+			children = (
+				4CE91D7727110026000E4C50 /* MemoryInterface.v */,
+				4CE91D7827110FF6000E4C50 /* ModuleDispatch.v */,
+			);
+			name = Define;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -317,8 +371,12 @@
 				4C5FC8B7270EB9E400B1C18A /* UHRModuleInterface.h in Headers */,
 				4C906BAE270FDE8100A9D4E2 /* UHRModuleCounter.h in Headers */,
 				4C906B91270FD1B300A9D4E2 /* UHRPeelerTypes.h in Headers */,
+				4C26F7372714E073005A059E /* UHRSoftRamModel.h in Headers */,
 				4C906BB0270FE13E00A9D4E2 /* UHRModuleCounterInterface.h in Headers */,
+				4C26F73C271753C3005A059E /* UHRMemoryInterface.h in Headers */,
+				4C26F6EB2713EC21005A059E /* UHRModuleDispatch.h in Headers */,
 				4C5FC89A270EB85300B1C18A /* UHRPeeler.h in Headers */,
+				4C26F6E92713EA87005A059E /* UHRModuleSoftMemoryInterface.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +438,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				4CE91D712710C280000E4C50 /* PBXTargetDependency */,
 			);
 			name = Peeler;
 			productName = Peeler;
@@ -535,6 +594,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C906BAF270FDE8100A9D4E2 /* UHRModuleCounter.m in Sources */,
+				4C26F7382714E073005A059E /* UHRSoftRamModel.m in Sources */,
+				4C26F6ED2713EE11005A059E /* UHRModuleDispatchManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,6 +622,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C906BB2270FE2C000A9D4E2 /* UHRModuleCounterTests.m in Sources */,
+				4C26F73A2714E227005A059E /* UHRModuleDispatchManagerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,6 +643,11 @@
 			isa = PBXTargetDependency;
 			target = 4C5FC896270EB85300B1C18A /* Peeler */;
 			targetProxy = 4C906B9B270FD95E00A9D4E2 /* PBXContainerItemProxy */;
+		};
+		4CE91D712710C280000E4C50 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C906B88270FCB7D00A9D4E2 /* Module Builder */;
+			targetProxy = 4CE91D702710C280000E4C50 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
