@@ -10,4 +10,10 @@
 
 @interface UHRSoftRamModel : NSObject
 
+- (instancetype)initWithRAMSize:(UInt32)ramSize delay:(UInt32)delay;
+- (UInt32)memoryID;
+- (void)loadDataToRAM:(NSData *)data;
+- (void *)ramBytes;
+- (UInt32)ramLength;
+
 @end

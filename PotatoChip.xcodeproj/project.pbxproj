@@ -14,6 +14,7 @@
 		4C26F7382714E073005A059E /* UHRSoftRamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C26F7362714E073005A059E /* UHRSoftRamModel.m */; };
 		4C26F73A2714E227005A059E /* UHRModuleDispatchManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C26F7392714E227005A059E /* UHRModuleDispatchManagerTests.m */; };
 		4C26F73C271753C3005A059E /* UHRMemoryInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C26F73B271753C3005A059E /* UHRMemoryInterface.h */; };
+		4C26F73E27176D3D005A059E /* UHRSoftRamModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C26F73D27176D3D005A059E /* UHRSoftRamModelTests.m */; };
 		4C5FC86B270EB78200B1C18A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5FC86A270EB78200B1C18A /* AppDelegate.m */; };
 		4C5FC86D270EB78300B1C18A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C5FC86C270EB78300B1C18A /* Assets.xcassets */; };
 		4C5FC870270EB78300B1C18A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C5FC86E270EB78300B1C18A /* MainMenu.xib */; };
@@ -99,6 +100,7 @@
 		4C26F7362714E073005A059E /* UHRSoftRamModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UHRSoftRamModel.m; sourceTree = "<group>"; };
 		4C26F7392714E227005A059E /* UHRModuleDispatchManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UHRModuleDispatchManagerTests.m; sourceTree = "<group>"; };
 		4C26F73B271753C3005A059E /* UHRMemoryInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UHRMemoryInterface.h; sourceTree = "<group>"; };
+		4C26F73D27176D3D005A059E /* UHRSoftRamModelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UHRSoftRamModelTests.m; sourceTree = "<group>"; };
 		4C5FC867270EB78200B1C18A /* Baked Potato.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Baked Potato.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C5FC869270EB78200B1C18A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4C5FC86A270EB78200B1C18A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 			children = (
 				4C906BB1270FE2C000A9D4E2 /* UHRModuleCounterTests.m */,
 				4C26F7392714E227005A059E /* UHRModuleDispatchManagerTests.m */,
+				4C26F73D27176D3D005A059E /* UHRSoftRamModelTests.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 			files = (
 				4C906BB2270FE2C000A9D4E2 /* UHRModuleCounterTests.m in Sources */,
 				4C26F73A2714E227005A059E /* UHRModuleDispatchManagerTests.m in Sources */,
+				4C26F73E27176D3D005A059E /* UHRSoftRamModelTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

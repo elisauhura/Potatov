@@ -99,3 +99,5 @@ unsigned int UHRModuleDispatchRegisterHandlerForID(unsigned int _id, UHRModuleDi
 unsigned int UHRModuleDispatchRemoveHandlerForID(unsigned int _id) {
     return [UHRModuleDispatchManager.defaultDispatch removeHandlerForID:_id];
 }
+
+const unsigned int UHRModuleDisptachDefaultID = 0;

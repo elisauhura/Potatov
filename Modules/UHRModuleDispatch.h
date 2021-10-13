@@ -22,6 +22,6 @@ unsigned int UHRModuleDispatchRegisterHandlerForID(unsigned int id, UHRModuleDis
 
 unsigned int UHRModuleDispatchRemoveHandlerForID(unsigned int id);
 
-const unsigned int UHRModuleDisptachDefaultID = 0;
+extern const unsigned int UHRModuleDisptachDefaultID;
 
 
