@@ -39,6 +39,7 @@
     OCMVerify([_mockedScript applyOnFallChangesToModule:nil atTime:5]);
     OCMVerify([_mockedScript checkOnHighContrainsForModule:nil atTime:5]);
     OCMVerify([_mockedScript checkOnLowContrainsForModule:nil atTime:5]);
+    OCMVerify([_mockedScript callCallbackWithModule:nil atTime:5]);
 }
 
 - (void)testTimeoutRun {

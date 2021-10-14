@@ -115,6 +115,18 @@
     return YES;
 }
 
+- (BOOL)callCallbackWithModule:(id<UHRModuleInterface>)module atTime:(UHRTimeUnit)time {
+    NSDictionary *instructionsAtTime = [_dictionary objectForKey:@((int)time)];
+    BOOL (^callback)(id<UHRModuleInterface> module, UHRTimeUnit time);
+    
+    if(instructionsAtTime != nil &&
+       (callback = [instructionsAtTime objectForKey:@"callback"]) &&
+       [callback isKindOfClass:NSClassFromString(@"NSBlock")]) {
+        return callback(module, time);
+    }
+    return YES;
+}
+
 - (BOOL)passScriptForModule:(id<UHRModuleInterface>)module atTime:(UHRTimeUnit)time {
     NSDictionary *instructionsAtTime = [_dictionary objectForKey:@((int)time)];
     if(instructionsAtTime != nil) {

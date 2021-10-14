@@ -11,6 +11,8 @@
 
 #import "UHRTestBenchScript.h"
 
+static BOOL callbackCalled = NO;
+
 @interface UHRTestBenchScriptTests : XCTestCase
 
 @property UHRTestBenchScript *script;
@@ -20,6 +22,7 @@
 @implementation UHRTestBenchScriptTests
 
 - (void)setUp {
+    callbackCalled = NO;
     _script = [UHRTestBenchScript scriptFromDictionary:@{
         @(1): @{
             @"applyOnRise": @[
@@ -42,6 +45,11 @@
             ]
         },
         @(10): @{
+            @"callback": ^BOOL(id module, UInt32 time) {
+                XCTAssert(time == 10);
+                callbackCalled = YES;
+                return FALSE;
+            },
             @"pass": @{}
         }
     }];
@@ -113,5 +121,13 @@
     XCTAssertTrue([_script passScriptForModule:nil atTime:10]);
     XCTAssertFalse([_script passScriptForModule:nil atTime:5]);
 }
+
+- (void)testCallback {
+    XCTAssert([_script callCallbackWithModule:nil atTime:5]);
+    XCTAssertFalse(callbackCalled);
+    XCTAssertFalse([_script callCallbackWithModule:nil atTime:10]);
+    XCTAssert(callbackCalled);
+}
+
 
 @end

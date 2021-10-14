@@ -23,5 +23,6 @@
 - (BOOL)checkOnHighContrainsForModule:(id<UHRModuleInterface>)module atTime:(UHRTimeUnit)time;
 - (BOOL)checkOnLowContrainsForModule:(id<UHRModuleInterface>)module atTime:(UHRTimeUnit)time;
 - (BOOL)passScriptForModule:(id<UHRModuleInterface>)module atTime:(UHRTimeUnit)time;
+- (BOOL)callCallbackWithModule:(id<UHRModuleInterface>)module atTime:(UHRTimeUnit)time;
 
 @end

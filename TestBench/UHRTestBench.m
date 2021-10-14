@@ -44,6 +44,8 @@
         [_module evaluateStateAtTime:15+simulationTime*10];
         [_script checkOnLowContrainsForModule:_module atTime:simulationTime];
         
+        [_script callCallbackWithModule:_module atTime:simulationTime];
+        
         if([_script passScriptForModule:_module atTime:simulationTime]) {
             break;
         }
