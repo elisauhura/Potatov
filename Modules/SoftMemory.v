@@ -28,41 +28,40 @@ input reset;
 input clock;
 
 reg [31:0]ID /* verilator public */;
-
+reg [31:0]counter;
 reg [3:0]previousCommand;
 
+wire [31:0]wideCommand;
+assign wideCommand = {28'b0, cCommand};
+
 always @(posedge clock) begin
+    integer delay;
+    
     if(reset) begin
         hReady = 0;
         hSignal = 0;
         hData = 0;
+        counter = 0;
         previousCommand = `MemoryInterfaceCommandNOP;
     end
     if(cCommand != previousCommand) begin
         previousCommand = cCommand;
-        casez(cCommand)
-        4`MemoryInterfaceCommandNOP: begin end
-        4`MemoryInterfaceCommandHAW: begin end
-        4`MemoryInterfaceCommandRB: begin end
-        4`MemoryInterfaceCommandRS: begin end
-        4`MemoryInterfaceCommandRW: begin end
-        4`MemoryInterfaceCommandDR: begin end
-        4`MemoryInterfaceCommandWB: begin end
-        4`MemoryInterfaceCommandWS: begin end
-        4`MemoryInterfaceCommandWW: begin end
-        endcase;
+        delay = UHRModuleDispatch(ID, `DispatchMemoryInterfaceGetDelayFor, wideCommand, cAddress, cData);
+        if(delay == 0) begin
+            hReady = 1;
+            hData = UHRModuleDispatch(ID, `DispatchMemoryInterfaceDoOperation, wideCommand, cAddress, cData);
+        end else begin
+            counter = delay;
+            hReady = 0;
+        end
     end else begin
-        casez(cCommand)
-        4`MemoryInterfaceCommandNOP: begin end
-        4`MemoryInterfaceCommandHAW: begin end
-        4`MemoryInterfaceCommandRB: begin end
-        4`MemoryInterfaceCommandRS: begin end
-        4`MemoryInterfaceCommandRW: begin end
-        4`MemoryInterfaceCommandDR: begin end
-        4`MemoryInterfaceCommandWB: begin end
-        4`MemoryInterfaceCommandWS: begin end
-        4`MemoryInterfaceCommandWW: begin end
-        endcase;
+        if(counter > 0) begin
+            if(counter == 1) begin
+                hReady = 1;
+                hData = UHRModuleDispatch(ID, `DispatchMemoryInterfaceDoOperation, wideCommand, cAddress, cData);
+            end 
+            counter = counter - 1;
+        end
     end
 end
 

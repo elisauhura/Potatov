@@ -81,7 +81,7 @@ static unsigned int softRamHandler (unsigned int source, unsigned int request, u
         case UHRMemoryInterfaceCommandWWB:
             width = 4;
         write:
-            [self writeAtAddress:address withWidth:width value:address];
+            [self writeAtAddress:address withWidth:width value:data];
             break;
         case UHRMemoryInterfaceCommandHAW:
         case UHRMemoryInterfaceCommandDRA:

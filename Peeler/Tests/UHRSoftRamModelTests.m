@@ -69,6 +69,107 @@
     NSData *data = [[NSData alloc] initWithBytes:"beefdead" length:8];
     [_model loadDataToRAM:data];
     
+    XCTAssert([manager dispatchFromSource:source
+                                  request:UHRModuleDispatchRequestMemoryInterfaceDoOperation
+                                     arg0:UHRMemoryInterfaceCommandRBA
+                                     arg1:1
+                                     arg2:0] == 'e');
+    XCTAssert([manager dispatchFromSource:source
+                                  request:UHRModuleDispatchRequestMemoryInterfaceDoOperation
+                                     arg0:UHRMemoryInterfaceCommandRBB
+                                     arg1:3
+                                     arg2:0] == 'f');
+    XCTAssert([manager dispatchFromSource:source
+                                  request:UHRModuleDispatchRequestMemoryInterfaceDoOperation
+                                     arg0:UHRMemoryInterfaceCommandRSA
+                                     arg1:1
+                                     arg2:0] == 0x6565);
+    XCTAssert([manager dispatchFromSource:source
+                                  request:UHRModuleDispatchRequestMemoryInterfaceDoOperation
+                                     arg0:UHRMemoryInterfaceCommandRSB
+                                     arg1:3
+                                     arg2:0] == 0x6466);
+    XCTAssert([manager dispatchFromSource:source
+                                  request:UHRModuleDispatchRequestMemoryInterfaceDoOperation
+                                     arg0:UHRMemoryInterfaceCommandRWA
+                                     arg1:4
+                                     arg2:0] == 0x64616564);
+    XCTAssert([manager dispatchFromSource:source
+                                  request:UHRModuleDispatchRequestMemoryInterfaceDoOperation
+                                     arg0:UHRMemoryInterfaceCommandRWB
+                                     arg1:0
+                                     arg2:0] == 0x66656562);
+}
+
+- (void)testMemoryWrite {
+    XCTAssert([_model ramLength] == 512);
+    
+    UInt32 source = [_model memoryID];
+    UHRModuleDispatchManager *manager = [UHRModuleDispatchManager defaultDispatch];
+    
+    [manager dispatchFromSource:source
+                        request:UHRModuleDispatchRequestMemoryInterfaceDoOperation
+                           arg0:UHRMemoryInterfaceCommandWBA
+                           arg1:0
+                           arg2:0x61];
+    [manager dispatchFromSource:source
+                        request:UHRModuleDispatchRequestMemoryInterfaceDoOperation
+                           arg0:UHRMemoryInterfaceCommandWBB
+                           arg1:1
+                           arg2:0x62];
+    [manager dispatchFromSource:source
+                        request:UHRModuleDispatchRequestMemoryInterfaceDoOperation
+                           arg0:UHRMemoryInterfaceCommandWSA
+                           arg1:2
+                           arg2:0x6463];
+    [manager dispatchFromSource:source
+                        request:UHRModuleDispatchRequestMemoryInterfaceDoOperation
+                           arg0:UHRMemoryInterfaceCommandWSB
+                           arg1:4
+                           arg2:0x6665];
+    [manager dispatchFromSource:source
+                        request:UHRModuleDispatchRequestMemoryInterfaceDoOperation
+                           arg0:UHRMemoryInterfaceCommandWWA
+                           arg1:6
+                           arg2:0x6A696867];
+    [manager dispatchFromSource:source
+                        request:UHRModuleDispatchRequestMemoryInterfaceDoOperation
+                           arg0:UHRMemoryInterfaceCommandWWB
+                           arg1:10
+                           arg2:0x6E6D6C6B];
+    
+    XCTAssert(memcmp([_model ramBytes], "abcdefghijklmn", 14) == 0);
+}
+
+- (void)testMemoryNOOP {
+    UInt32 source = [_model memoryID];
+    UHRModuleDispatchManager *manager = [UHRModuleDispatchManager defaultDispatch];
+    
+    
+    XCTAssert([manager dispatchFromSource:source
+                                  request:UHRModuleDispatchRequestMemoryInterfaceDoOperation
+                                     arg0:UHRMemoryInterfaceCommandNOP
+                                     arg1:1
+                                     arg2:0] == 0);
+    
+    XCTAssert([manager dispatchFromSource:source
+                                  request:UHRModuleDispatchRequestMemoryInterfaceDoOperation
+                                     arg0:UHRMemoryInterfaceCommandDRA
+                                     arg1:1
+                                     arg2:0] == 0);
+    
+    XCTAssert([manager dispatchFromSource:source
+                                  request:UHRModuleDispatchRequestMemoryInterfaceDoOperation
+                                     arg0:UHRMemoryInterfaceCommandDRB
+                                     arg1:1
+                                     arg2:0] == 0);
+    
+    XCTAssert([manager dispatchFromSource:source
+                                  request:UHRModuleDispatchRequestMemoryInterfaceDoOperation
+                                     arg0:UHRMemoryInterfaceCommandHAW
+                                     arg1:1
+                                     arg2:0] == 0);
+    
 }
 
 @end

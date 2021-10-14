@@ -8,3 +8,4 @@
 
 #import "UHRModuleInterface.h"
 #import "UHRModuleCounter.h"
+#import "UHRModuleSoftMemory.h"

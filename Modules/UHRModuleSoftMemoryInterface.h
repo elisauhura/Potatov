@@ -14,11 +14,13 @@ enum UHRModuleSoftMemorySignal {
     UHRModuleSoftMemorySignalNone,
     UHRModuleSoftMemorySignalCCommand,
     UHRModuleSoftMemorySignalCAddress,
+    UHRModuleSoftMemorySignalCData,
     UHRModuleSoftMemorySignalHReady,
     UHRModuleSoftMemorySignalHSignal,
     UHRModuleSoftMemorySignalHData,
     UHRModuleSoftMemorySignalReset,
     UHRModuleSoftMemorySignalClock,
+    UHRModuleSoftMemorySignalID,
 };
 
 void * UHRMakeSoftMemory(void);
