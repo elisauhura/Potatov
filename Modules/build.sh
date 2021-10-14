@@ -10,7 +10,8 @@ echo "Module Builder"
 
 echo "Building from: " `pwd`
 
-make Counter.dylib
-make SoftMemory.dylib
+make Counter.dylib &&
+make SoftMemory.dylib &&
+make Registers.dylib &&
 # always last
 make verilator.dylib

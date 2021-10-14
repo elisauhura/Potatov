@@ -20,6 +20,13 @@
 		4C26F7442717A8DB005A059E /* SoftMemory.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C26F7432717A8DB005A059E /* SoftMemory.dylib */; };
 		4C26F7452717A902005A059E /* SoftMemory.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 4C26F7432717A8DB005A059E /* SoftMemory.dylib */; };
 		4C26F7472717A989005A059E /* UHRModuleSoftMemoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C26F7462717A989005A059E /* UHRModuleSoftMemoryTests.m */; };
+		4C26F74A2717C6EE005A059E /* SoftPackage.v in Resources */ = {isa = PBXBuildFile; fileRef = 4C26F7492717C6EE005A059E /* SoftPackage.v */; };
+		4C26F74D27186F3C005A059E /* UHRModuleRegistersInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C26F74C27186F3C005A059E /* UHRModuleRegistersInterface.h */; };
+		4C26F75127187494005A059E /* UHRModuleRegisters.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C26F74F27187494005A059E /* UHRModuleRegisters.h */; };
+		4C26F75227187494005A059E /* UHRModuleRegisters.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C26F75027187494005A059E /* UHRModuleRegisters.m */; };
+		4C26F75427187B9B005A059E /* Registers.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C26F75327187B9B005A059E /* Registers.dylib */; };
+		4C26F75527187BA7005A059E /* Registers.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 4C26F75327187B9B005A059E /* Registers.dylib */; };
+		4C4F95FA271886C100F2993E /* UHRModuleRegistersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4F95F9271886C100F2993E /* UHRModuleRegistersTests.m */; };
 		4C5FC86B270EB78200B1C18A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5FC86A270EB78200B1C18A /* AppDelegate.m */; };
 		4C5FC86D270EB78300B1C18A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C5FC86C270EB78300B1C18A /* Assets.xcassets */; };
 		4C5FC870270EB78300B1C18A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C5FC86E270EB78300B1C18A /* MainMenu.xib */; };
@@ -87,6 +94,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				4C26F75527187BA7005A059E /* Registers.dylib in Embed Libraries */,
 				4C906BB8270FE5C400A9D4E2 /* Counter.dylib in Embed Libraries */,
 				4C906BBA270FE5C600A9D4E2 /* verilator.dylib in Embed Libraries */,
 				4C26F7452717A902005A059E /* SoftMemory.dylib in Embed Libraries */,
@@ -111,6 +119,15 @@
 		4C26F7402717A80F005A059E /* UHRModuleSoftMemory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UHRModuleSoftMemory.m; sourceTree = "<group>"; };
 		4C26F7432717A8DB005A059E /* SoftMemory.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = SoftMemory.dylib; sourceTree = "<group>"; };
 		4C26F7462717A989005A059E /* UHRModuleSoftMemoryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UHRModuleSoftMemoryTests.m; sourceTree = "<group>"; };
+		4C26F7482717C6CC005A059E /* Core.v */ = {isa = PBXFileReference; lastKnownFileType = text; path = Core.v; sourceTree = "<group>"; };
+		4C26F7492717C6EE005A059E /* SoftPackage.v */ = {isa = PBXFileReference; lastKnownFileType = text; path = SoftPackage.v; sourceTree = "<group>"; };
+		4C26F74B27186A26005A059E /* Registers.v */ = {isa = PBXFileReference; lastKnownFileType = text; path = Registers.v; sourceTree = "<group>"; };
+		4C26F74C27186F3C005A059E /* UHRModuleRegistersInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UHRModuleRegistersInterface.h; sourceTree = "<group>"; };
+		4C26F74E27187170005A059E /* Registers.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Registers.cpp; sourceTree = "<group>"; };
+		4C26F74F27187494005A059E /* UHRModuleRegisters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UHRModuleRegisters.h; sourceTree = "<group>"; };
+		4C26F75027187494005A059E /* UHRModuleRegisters.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UHRModuleRegisters.m; sourceTree = "<group>"; };
+		4C26F75327187B9B005A059E /* Registers.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = Registers.dylib; sourceTree = "<group>"; };
+		4C4F95F9271886C100F2993E /* UHRModuleRegistersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UHRModuleRegistersTests.m; sourceTree = "<group>"; };
 		4C5FC867270EB78200B1C18A /* Baked Potato.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Baked Potato.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C5FC869270EB78200B1C18A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4C5FC86A270EB78200B1C18A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -165,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C906BAA270FDE5800A9D4E2 /* verilator.dylib in Frameworks */,
+				4C26F75427187B9B005A059E /* Registers.dylib in Frameworks */,
 				4C906BAB270FDE5A00A9D4E2 /* Counter.dylib in Frameworks */,
 				4C26F7442717A8DB005A059E /* SoftMemory.dylib in Frameworks */,
 			);
@@ -287,6 +305,7 @@
 			children = (
 				4C906B8E270FCF0A00A9D4E2 /* Counter.cpp */,
 				4C26F6E72713E928005A059E /* SoftMemory.cpp */,
+				4C26F74E27187170005A059E /* Registers.cpp */,
 			);
 			name = Implementation;
 			sourceTree = "<group>";
@@ -296,6 +315,7 @@
 			children = (
 				4C906B8F270FCF0A00A9D4E2 /* UHRModuleCounterInterface.h */,
 				4C26F6E82713E928005A059E /* UHRModuleSoftMemoryInterface.h */,
+				4C26F74C27186F3C005A059E /* UHRModuleRegistersInterface.h */,
 				4C26F6EA2713EC21005A059E /* UHRModuleDispatch.h */,
 				4C26F73B271753C3005A059E /* UHRMemoryInterface.h */,
 			);
@@ -307,6 +327,9 @@
 			children = (
 				4C906B8D270FCCCD00A9D4E2 /* Counter.v */,
 				4CE91D752710FCF9000E4C50 /* SoftMemory.v */,
+				4C26F7482717C6CC005A059E /* Core.v */,
+				4C26F7492717C6EE005A059E /* SoftPackage.v */,
+				4C26F74B27186A26005A059E /* Registers.v */,
 			);
 			name = Description;
 			sourceTree = "<group>";
@@ -318,6 +341,7 @@
 				4C26F7392714E227005A059E /* UHRModuleDispatchManagerTests.m */,
 				4C26F73D27176D3D005A059E /* UHRSoftRamModelTests.m */,
 				4C26F7462717A989005A059E /* UHRModuleSoftMemoryTests.m */,
+				4C4F95F9271886C100F2993E /* UHRModuleRegistersTests.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -328,6 +352,7 @@
 				4C906BA7270FDE3000A9D4E2 /* verilator.dylib */,
 				4C906BA3270FDC0200A9D4E2 /* Counter.dylib */,
 				4C26F7432717A8DB005A059E /* SoftMemory.dylib */,
+				4C26F75327187B9B005A059E /* Registers.dylib */,
 			);
 			name = Object;
 			sourceTree = "<group>";
@@ -339,6 +364,8 @@
 				4C906BAD270FDE8100A9D4E2 /* UHRModuleCounter.m */,
 				4C26F73F2717A80F005A059E /* UHRModuleSoftMemory.h */,
 				4C26F7402717A80F005A059E /* UHRModuleSoftMemory.m */,
+				4C26F74F27187494005A059E /* UHRModuleRegisters.h */,
+				4C26F75027187494005A059E /* UHRModuleRegisters.m */,
 			);
 			name = Modules;
 			sourceTree = "<group>";
@@ -391,11 +418,13 @@
 				4C906B91270FD1B300A9D4E2 /* UHRPeelerTypes.h in Headers */,
 				4C26F7372714E073005A059E /* UHRSoftRamModel.h in Headers */,
 				4C906BB0270FE13E00A9D4E2 /* UHRModuleCounterInterface.h in Headers */,
+				4C26F74D27186F3C005A059E /* UHRModuleRegistersInterface.h in Headers */,
 				4C26F73C271753C3005A059E /* UHRMemoryInterface.h in Headers */,
 				4C26F6EB2713EC21005A059E /* UHRModuleDispatch.h in Headers */,
 				4C26F7412717A80F005A059E /* UHRModuleSoftMemory.h in Headers */,
 				4C5FC89A270EB85300B1C18A /* UHRPeeler.h in Headers */,
 				4C26F6E92713EA87005A059E /* UHRModuleSoftMemoryInterface.h in Headers */,
+				4C26F75127187494005A059E /* UHRModuleRegisters.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,6 +622,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C26F74A2717C6EE005A059E /* SoftPackage.v in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,6 +642,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C26F75227187494005A059E /* UHRModuleRegisters.m in Sources */,
 				4C906BAF270FDE8100A9D4E2 /* UHRModuleCounter.m in Sources */,
 				4C26F7382714E073005A059E /* UHRSoftRamModel.m in Sources */,
 				4C26F7422717A80F005A059E /* UHRModuleSoftMemory.m in Sources */,
@@ -643,6 +674,7 @@
 			files = (
 				4C906BB2270FE2C000A9D4E2 /* UHRModuleCounterTests.m in Sources */,
 				4C26F73A2714E227005A059E /* UHRModuleDispatchManagerTests.m in Sources */,
+				4C4F95FA271886C100F2993E /* UHRModuleRegistersTests.m in Sources */,
 				4C26F7472717A989005A059E /* UHRModuleSoftMemoryTests.m in Sources */,
 				4C26F73E27176D3D005A059E /* UHRSoftRamModelTests.m in Sources */,
 			);
