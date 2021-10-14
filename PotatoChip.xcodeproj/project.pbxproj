@@ -20,7 +20,6 @@
 		4C26F7442717A8DB005A059E /* SoftMemory.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C26F7432717A8DB005A059E /* SoftMemory.dylib */; };
 		4C26F7452717A902005A059E /* SoftMemory.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 4C26F7432717A8DB005A059E /* SoftMemory.dylib */; };
 		4C26F7472717A989005A059E /* UHRModuleSoftMemoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C26F7462717A989005A059E /* UHRModuleSoftMemoryTests.m */; };
-		4C26F74A2717C6EE005A059E /* SoftPackage.v in Resources */ = {isa = PBXBuildFile; fileRef = 4C26F7492717C6EE005A059E /* SoftPackage.v */; };
 		4C26F74D27186F3C005A059E /* UHRModuleRegistersInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C26F74C27186F3C005A059E /* UHRModuleRegistersInterface.h */; };
 		4C26F75127187494005A059E /* UHRModuleRegisters.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C26F74F27187494005A059E /* UHRModuleRegisters.h */; };
 		4C26F75227187494005A059E /* UHRModuleRegisters.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C26F75027187494005A059E /* UHRModuleRegisters.m */; };
@@ -622,7 +621,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C26F74A2717C6EE005A059E /* SoftPackage.v in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
