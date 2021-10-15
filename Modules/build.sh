@@ -13,5 +13,7 @@ echo "Building from: " `pwd`
 make Counter.dylib &&
 make SoftMemory.dylib &&
 make Registers.dylib &&
+make ALU.dylib &&
+make Core.dylib &&
 # always last
 make verilator.dylib

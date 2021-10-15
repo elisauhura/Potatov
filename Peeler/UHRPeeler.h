@@ -10,3 +10,5 @@
 #import "UHRModuleCounter.h"
 #import "UHRModuleSoftMemory.h"
 #import "UHRModuleRegisters.h"
+#import "UHRModuleALU.h"
+#import "UHRModuleCore.h"

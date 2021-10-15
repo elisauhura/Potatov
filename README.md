@@ -1,6 +1,6 @@
 #  Potato Chip I
 
-A RISC-V RI32(I/E)AC core developed on a Mac. 
+A RISC-V RI32IAC core developed on a Mac. 
 
 ## Requirements
 
