@@ -27,8 +27,8 @@ reg [31:0]registers[31:1] /* verilator public */;
 always @(posedge clock) begin
     int i;
     if(reset)
-        for(i=1; i<=32; i++) registers[i] = 0;
-    if(cRegDAddress != 0) registers[cRegDAddress] = cRegDData;
+        for(i=1; i<=32; i++) registers[i] <= 0;
+    else if(cRegDAddress != 0) registers[cRegDAddress] <= cRegDData;
 end
 
 assign hReg1Data = cReg1Address != 0 ? registers[cReg1Address] : 0;

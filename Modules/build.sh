@@ -15,5 +15,6 @@ make SoftMemory.dylib &&
 make Registers.dylib &&
 make ALU.dylib &&
 make Core.dylib &&
+make SoftPackage.dylib &&
 # always last
 make verilator.dylib

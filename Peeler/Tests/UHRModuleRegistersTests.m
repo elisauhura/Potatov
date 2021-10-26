@@ -40,7 +40,7 @@
                 @(UHRModuleRegistersSignalCReg1Address), @(i),
                 @(UHRModuleRegistersSignalCReg2Address), @(i>1?i-1:0)
             ],
-            @"checkOnHigh": @[
+            @"checkOnLow": @[
                 @(UHRModuleRegistersSignalHReg1Data), @(i == 0 ? 0 : 42+i),
                 @(UHRModuleRegistersSignalHReg2Data), @(i > 1 ? 41+i : 0)
             ]

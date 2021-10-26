@@ -12,3 +12,4 @@
 #import "UHRModuleRegisters.h"
 #import "UHRModuleALU.h"
 #import "UHRModuleCore.h"
+#import "UHRModuleSoftPackage.h"

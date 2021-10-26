@@ -13,6 +13,6 @@ output reg [31:0]counter;
 input reset;
 input clock;
 
-always @(posedge clock) counter = reset ? 0 : counter + 1;
+always @(posedge clock) counter <= reset ? 0 : counter + 1;
 
 endmodule

@@ -35,7 +35,7 @@
     UHRTestBench *testBench = [[UHRTestBench alloc] initWithModule:_module withScript:[UHRTestBenchScript scriptFromDictionary:@{
         @(0): @{
             @"applyOnRise": @[
-                @(UHRModuleCoreSignalHData), @(42),
+                @(UHRModuleCoreSignalHData), @(0b1111000100110111),
             ],
             @"checkOnHigh": @[
                 @(UHRModuleCoreSignalState), @(UHRModuleCoreStateFetch)
@@ -47,7 +47,7 @@
             ],
             @"checkOnHigh": @[
                 @(UHRModuleCoreSignalCCommand), @(UHRMemoryInterfaceCommandRWA),
-                @(UHRModuleCoreSignalInstruction), @(42)
+                @(UHRModuleCoreSignalInstruction), @(0b1111000100110111)
             ]
         },
         @(2): @{

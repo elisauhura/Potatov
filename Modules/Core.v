@@ -3,14 +3,17 @@
 //  Created by Elisa Silva on 14/10/21.
 //  Copyright © 2021 Uhura. All rights reserved.
 
-`include "MemoryInterface.v"
 `include "Registers.v"
+`include "ALU.v"
+
+`include "MemoryInterface.v"
 `include "InstructionFetch.v"
 
 `define CoreStateInit 0
-`define CoreStateFetch 1
-`define CoreStateFetchWaitReady 2
-`define CoreStateStall 999
+`define CoreStateFetchExecute 1
+`define CoreStateReadWriteBack 2
+`define CoreStateTrap 3
+`define CoreStateStall 4
 
 module Core(
     cCommand,
@@ -32,11 +35,36 @@ input [31:0]hData;
 input reset;
 input clock;
 
+ALU alu(
+    .a(alu_a),
+    .b(alu_b),
+    .funct3(alu_funct3),
+    .funct7_5b(alu_funct7_5b),
+    .out()
+);
+
+wire [31:0]alu_a;
+wire [31:0]alu_b;
+wire [2:0]alu_funct3;
+wire alu_funct7_5b;
+
+assign alu_a = 
+    opcode == `InstructionFetchOPLUI ? 0 : 0;
+
+assign alu_b = 
+    opcode == `InstructionFetchOPLUI ? immediate : 0;
+
+assign alu_funct3 = 
+    opcode == `InstructionFetchOPLUI ? `InstructionFetchF3ADD : 0;
+
+assign alu_funct7_5b = 
+    opcode == `InstructionFetchOPLUI ? 0 : 0;
+
 Registers registers(
     .cReg1Address(),
     .cReg2Address(),
     .cRegDAddress(registers_cRegDAddress),
-    .cRegDData(),
+    .cRegDData(alu.out),
     .hReg1Data(),
     .hReg2Data(),
     .reset(reset),
@@ -44,7 +72,7 @@ Registers registers(
 );
 
 wire [4:0]registers_cRegDAddress;
-assign registers_cRegDAddress = (clock && writeBack) ? rd : 0;
+assign registers_cRegDAddress = writeBack ? rd : 0;
 
 reg [31:0]PC /* verilator public */;
 reg [31:0]nextPC;
@@ -75,50 +103,45 @@ assign shamt = instruction[24:20];
 
 
 always @(posedge clock) begin
-    writeBack = 0;
     if(reset) begin
-        PC = 'h0;
-        state = `CoreStateInit;
-        side = 0;
-        cCommand = `MemoryInterfaceCommandNOP;
-    end
-    case(state)
-    `CoreStateInit: begin
-        cCommand = `MemoryInterfaceCommandNOP;
-        nextPC = 'h800; // entry point
-        state = `CoreStateFetch;
-    end
-    `CoreStateFetch: begin
-        PC = nextPC;
-        cCommand = side == 0 ? `MemoryInterfaceCommandRWA : `MemoryInterfaceCommandRWB;
-        side = !side;
-        if(hReady) begin
-            instruction = hData;
-            state = process_instruction();
-        end else begin
-            state = `CoreStateFetchWaitReady;
+        PC <= 'h0;
+        state <= `CoreStateInit;
+        side <= 0;
+        cCommand <= `MemoryInterfaceCommandNOP;
+    end else begin
+        /*
+        case(state)
+        `CoreStateInit: begin
+            cCommand <= `MemoryInterfaceCommandNOP;
+            nextPC <= 'h800; // entry point
+            state <= `CoreStateFetch;
         end
-    end
-    `CoreStateFetchWaitReady: begin
-        if(hReady) begin
-            instruction = hData;
-            state = process_instruction();
-        end else begin
-            state = `CoreStateFetchWaitReady;
+        `CoreStateFetch: begin
+            PC <= nextPC;
+            cCommand <= side == 0 ? `MemoryInterfaceCommandRWA : `MemoryInterfaceCommandRWB;
+            if(hReady) begin
+                writeBack <= 1;
+                instruction <= hData;
+                state <= `CoreStateFetch;
+            end else begin
+                state <= `CoreStateFetchWaitReady;
+            end
         end
+        `CoreStateFetchWaitReady: begin
+            if(hReady) begin
+                // edit this later
+                instruction <= hData;
+                state <= `CoreStateFetch;
+            end else begin
+                state <= `CoreStateFetchWaitReady;
+            end
+        end
+        `CoreStateStall: begin end
+        default:
+            state <= `CoreStateInit;
+        endcase;
+        */
     end
-    `CoreStateStall: begin end
-    default:
-        state = `CoreStateInit;
-    endcase;
 end
-
-function [31:0]process_instruction();
-case(opcode)
-default: begin end
-endcase;
-nextPC = PC + 4;
-process_instruction = `CoreStateFetch;
-endfunction;
 
 endmodule

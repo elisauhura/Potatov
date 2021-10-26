@@ -9,6 +9,17 @@
     }
   ],
   "defaultOptions" : {
+    "environmentVariableEntries" : [
+      {
+        "key" : "PROGRAMSROOT",
+        "value" : "$(SRCROOT)\/Programs\/"
+      }
+    ],
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:PotatoChip.xcodeproj",
+      "identifier" : "4C5FC8AB270EB8BB00B1C18A",
+      "name" : "TestBench"
+    },
     "testTimeoutsEnabled" : true
   },
   "testTargets" : [
