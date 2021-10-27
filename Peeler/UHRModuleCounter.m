@@ -7,12 +7,7 @@
 //
 
 #import "UHRModuleCounter.h"
-
-@interface UHRModuleCounter ()
-
-@property void * module;
-
-@end
+#import "UHRModule_Private.h"
 
 @implementation UHRModuleCounter
 
@@ -20,32 +15,20 @@
 {
     self = [super init];
     if (self) {
-        _module = UHRMakeCounter();
+        self.module = UHRMakeCounter();
+        self.destroy = UHRDestroyCounter;
+        self.poke = UHRPokeCounter;
+        self.peek = UHRPeekCounter;
+        self.eval = UHREvalCounter;
+        self.clockSignal = UHRModuleCounterSignalClock;
+        self.signalNames = @{
+            @(UHRModuleCounterSignalNone): @"none",
+            @(UHRModuleCounterSignalCounter): @"counter",
+            @(UHRModuleCounterSignalReset): @"reset",
+            @(UHRModuleCounterSignalClock): @"clock"
+        };
     }
     return self;
-}
-
-- (void)dealloc {
-    if(_module != NULL) {
-        UHRDestroyCounter(_module);
-        _module = NULL;
-    }
-}
-
-- (void)pokeSignal:(UHREnum)signal withValue:(UHRWord)value {
-    UHRPokeCounter(_module, signal, value);
-}
-
-- (UHRWord)peekSignal:(UHREnum)signal {
-    return UHRPeekCounter(_module, signal);
-}
-
-- (void)evaluateStateAtTime:(UHRTimeUnit)time {
-    UHREvalCounter(_module, time);
-}
-
-- (UHREnum)clockSignal {
-    return UHRModuleCounterSignalClock;
 }
 
 @end

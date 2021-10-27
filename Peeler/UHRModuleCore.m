@@ -7,12 +7,7 @@
 //
 
 #import "UHRModuleCore.h"
-
-@interface UHRModuleCore ()
-
-@property void * module;
-
-@end
+#import "UHRModule_Private.h"
 
 @implementation UHRModuleCore
 
@@ -20,32 +15,28 @@
 {
     self = [super init];
     if (self) {
-        _module = UHRMakeCore();
+        self.module = UHRMakeCore();
+        self.destroy = UHRDestroyCore;
+        self.poke = UHRPokeCore;
+        self.peek = UHRPeekCore;
+        self.eval = UHREvalCore;
+        self.clockSignal = UHRModuleCoreSignalClock;
+        self.signalNames = @{
+            @(UHRModuleCoreSignalNone): @"none",
+            @(UHRModuleCoreSignalCCommand): @"cCommand",
+            @(UHRModuleCoreSignalCAddress): @"cAddress",
+            @(UHRModuleCoreSignalCData): @"cData",
+            @(UHRModuleCoreSignalHReady): @"hReady",
+            @(UHRModuleCoreSignalHSignal): @"hSignal",
+            @(UHRModuleCoreSignalHData): @"hData",
+            @(UHRModuleCoreSignalReset): @"reset",
+            @(UHRModuleCoreSignalClock): @"clock",
+            @(UHRModuleCoreSignalPC): @"pc",
+            @(UHRModuleCoreSignalState): @"state",
+            @(UHRModuleCoreSignalInstruction): @"instruction",
+        };
     }
     return self;
-}
-
-- (void)dealloc {
-    if(_module != NULL) {
-        UHRDestroyCore(_module);
-        _module = NULL;
-    }
-}
-
-- (void)pokeSignal:(UHREnum)signal withValue:(UHRWord)value {
-    UHRPokeCore(_module, signal, value);
-}
-
-- (UHRWord)peekSignal:(UHREnum)signal {
-    return UHRPeekCore(_module, signal);
-}
-
-- (void)evaluateStateAtTime:(UHRTimeUnit)time {
-    UHREvalCore(_module, time);
-}
-
-- (UHREnum)clockSignal {
-    return UHRModuleCoreSignalClock;
 }
 
 @end

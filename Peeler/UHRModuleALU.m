@@ -7,12 +7,7 @@
 //
 
 #import "UHRModuleALU.h"
-
-@interface UHRModuleALU ()
-
-@property void *module;
-
-@end
+#import "UHRModule_Private.h"
 
 @implementation UHRModuleALU
 
@@ -20,32 +15,22 @@
 {
     self = [super init];
     if (self) {
-        _module = UHRMakeALU();
+        self.module = UHRMakeALU();
+        self.destroy = UHRDestroyALU;
+        self.poke = UHRPokeALU;
+        self.peek = UHRPeekALU;
+        self.eval = UHREvalALU;
+        self.clockSignal = UHRModuleALUSignalNone;
+        self.signalNames = @{
+            @(UHRModuleALUSignalNone): @"none",
+            @(UHRModuleALUSignalA): @"a",
+            @(UHRModuleALUSignalB): @"b",
+            @(UHRModuleALUSignalOut): @"out",
+            @(UHRModuleALUSignalFunct3): @"funct3",
+            @(UHRModuleALUSignalFunct7_5b): @"funct7_5b"
+        };
     }
     return self;
-}
-
-- (void)dealloc {
-    if(_module != NULL) {
-        UHRDestroyALU(_module);
-        _module = NULL;
-    }
-}
-
-- (void)pokeSignal:(UHREnum)signal withValue:(UHRWord)value {
-    UHRPokeALU(_module, signal, value);
-}
-
-- (UHRWord)peekSignal:(UHREnum)signal {
-    return UHRPeekALU(_module, signal);
-}
-
-- (void)evaluateStateAtTime:(UHRTimeUnit)time {
-    UHREvalALU(_module, time);
-}
-
-- (UHREnum)clockSignal {
-    return UHRModuleALUSignalNone;
 }
 
 @end

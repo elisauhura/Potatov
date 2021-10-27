@@ -7,12 +7,7 @@
 //
 
 #import "UHRModuleSoftPackage.h"
-
-@interface UHRModuleSoftPackage ()
-
-@property void * module;
-
-@end
+#import "UHRModule_Private.h"
 
 @implementation UHRModuleSoftPackage
 
@@ -20,32 +15,29 @@
 {
     self = [super init];
     if (self) {
-        _module = UHRMakeSoftPackage();
+        self.module = UHRMakeSoftPackage();
+        self.destroy = UHRDestroySoftPackage;
+        self.poke = UHRPokeSoftPackage;
+        self.peek = UHRPeekSoftPackage;
+        self.eval = UHREvalSoftPackage;
+        self.clockSignal = UHRModuleSoftPackageSignalClock;
+        self.signalNames = @{
+            @(UHRModuleSoftPackageSignalNone):@"none",
+            @(UHRModuleSoftPackageSignalCCommand):@"cCommand",
+            @(UHRModuleSoftPackageSignalCAddress):@"cAddress",
+            @(UHRModuleSoftPackageSignalCData):@"cData",
+            @(UHRModuleSoftPackageSignalHReady):@"hReady",
+            @(UHRModuleSoftPackageSignalHSignal):@"hSignal",
+            @(UHRModuleSoftPackageSignalHData):@"hData",
+            @(UHRModuleSoftPackageSignalReset):@"reset",
+            @(UHRModuleSoftPackageSignalClock):@"clock",
+            @(UHRModuleSoftPackageSignalPC):@"pc",
+            @(UHRModuleSoftPackageSignalState):@"state",
+            @(UHRModuleSoftPackageSignalInstruction):@"instruction",
+            @(UHRModuleSoftPackageSignalMemoryID):@"memoryID",
+        };
     }
     return self;
-}
-
-- (void)dealloc {
-    if(_module != NULL) {
-        UHRDestroySoftPackage(_module);
-        _module = NULL;
-    }
-}
-
-- (void)pokeSignal:(UHREnum)signal withValue:(UHRWord)value {
-    UHRPokeSoftPackage(_module, signal, value);
-}
-
-- (UHRWord)peekSignal:(UHREnum)signal {
-    return UHRPeekSoftPackage(_module, signal);
-}
-
-- (void)evaluateStateAtTime:(UHRTimeUnit)time {
-    UHREvalSoftPackage(_module, time);
-}
-
-- (UHREnum)clockSignal {
-    return UHRModuleSoftPackageSignalClock;
 }
 
 @end

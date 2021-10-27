@@ -6,9 +6,9 @@
 //  Copyright © 2021 Uhura. All rights reserved.
 //
 
-#import "UHRModuleInterface.h"
+#import "UHRModule.h"
 #import "UHRModuleSoftPackageInterface.h"
 
-@interface UHRModuleSoftPackage : NSObject <UHRModuleInterface>
+@interface UHRModuleSoftPackage : UHRModule
 
 @end

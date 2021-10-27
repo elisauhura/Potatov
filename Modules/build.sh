@@ -16,5 +16,6 @@ make Registers.dylib &&
 make ALU.dylib &&
 make Core.dylib &&
 make SoftPackage.dylib &&
+make FIFO.dylib &&
 # always last
 make verilator.dylib

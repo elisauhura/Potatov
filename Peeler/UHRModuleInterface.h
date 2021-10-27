@@ -24,4 +24,7 @@
 /// @brief: Get the signal of for the clock wire
 - (UHREnum)clockSignal;
 
+/// @brief: Get the name of the signals
+- (NSDictionary *)signalNames;
+
 @end

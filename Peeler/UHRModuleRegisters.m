@@ -7,12 +7,7 @@
 //
 
 #import "UHRModuleRegisters.h"
-
-@interface UHRModuleRegisters ()
-
-@property void * module;
-
-@end
+#import "UHRModule_Private.h"
 
 @implementation UHRModuleRegisters
 
@@ -20,32 +15,31 @@
 {
     self = [super init];
     if (self) {
-        _module = UHRMakeRegisters();
+        NSMutableDictionary *names = [@{
+            @(UHRModuleRegistersSignalNone): @"none",
+            @(UHRModuleRegistersSignalCReg1Address): @"cReg1Address",
+            @(UHRModuleRegistersSignalCReg2Address): @"cReg2Address",
+            @(UHRModuleRegistersSignalCRegDAddress): @"cRegDAddress",
+            @(UHRModuleRegistersSignalCRegDData): @"cRegDData",
+            @(UHRModuleRegistersSignalHReg1Data): @"hReg1Data",
+            @(UHRModuleRegistersSignalHReg2Data): @"hReg2Data",
+            @(UHRModuleRegistersSignalReset): @"reset",
+            @(UHRModuleRegistersSignalClock): @"clock",
+        } mutableCopy];
+        
+        for(int i = 1; i < 32; i++) {
+            names[@(UHRModuleRegistersSignalReg + i - 1)] = [NSString stringWithFormat:@"reg%d", i];
+        }
+        
+        self.module = UHRMakeRegisters();
+        self.destroy = UHRDestroyRegisters;
+        self.poke = UHRPokeRegisters;
+        self.peek = UHRPeekRegisters;
+        self.eval = UHREvalRegisters;
+        self.clockSignal = UHRModuleRegistersSignalClock;
+        self.signalNames = [names copy];
     }
     return self;
-}
-
-- (void)dealloc {
-    if(_module != NULL) {
-        UHRDestroyRegisters(_module);
-        _module = NULL;
-    }
-}
-
-- (void)pokeSignal:(UHREnum)signal withValue:(UHRWord)value {
-    UHRPokeRegisters(_module, signal, value);
-}
-
-- (UHRWord)peekSignal:(UHREnum)signal {
-    return UHRPeekRegisters(_module, signal);
-}
-
-- (void)evaluateStateAtTime:(UHRTimeUnit)time {
-    UHREvalRegisters(_module, time);
-}
-
-- (UHREnum)clockSignal {
-    return UHRModuleRegistersSignalClock;
 }
 
 @end

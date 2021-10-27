@@ -6,6 +6,8 @@
 //  Copyright © 2021 Uhura. All rights reserved.
 //
 
+#pragma once
+
 #include <stdint.h>
 
 enum UHRModuleALUSignal {

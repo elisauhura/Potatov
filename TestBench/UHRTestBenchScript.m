@@ -79,8 +79,8 @@
             
             if(expectedValue != observedValue) {
                 if(_useXCTestIntegrationFlag) {
-                    XCTFail(@"checkOnHigh failed @%u; signal %d returned %u when expecting %u.",
-                            time, signal, observedValue, expectedValue);
+                    XCTFail(@"checkOnHigh failed @%u; signal %@(%d) returned %u when expecting %u.",
+                            time, module.signalNames == nil ? nil : module.signalNames[@(signal)], signal, observedValue, expectedValue);
                 } else {
                     return NO;
                 }
@@ -104,8 +104,8 @@
             
             if(expectedValue != observedValue) {
                 if(_useXCTestIntegrationFlag) {
-                    XCTFail(@"checkOnLow failed @%u; signal %d returned %u when expecting %u.",
-                            time, signal, observedValue, expectedValue);
+                    XCTFail(@"checkOnLow failed @%u; signal %@(%d) returned %u when expecting %u.",
+                            time, module.signalNames == nil ? nil : module.signalNames[@(signal)], signal, observedValue, expectedValue);
                 } else {
                     return NO;
                 }

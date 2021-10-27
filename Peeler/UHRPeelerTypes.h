@@ -11,3 +11,9 @@
 typedef UInt32  UHRWord;
 typedef int     UHREnum;
 typedef UInt32  UHRTimeUnit;
+
+typedef void *(*UHRMakeModule)(void);
+typedef void (*UHRDestroyModule)(void *);
+typedef void (*UHRPokeModule)(void *, int, uint32_t);
+typedef uint32_t (*UHRPeekModule)(void *, int);
+typedef void (*UHREvalModule)(void *, uint32_t);

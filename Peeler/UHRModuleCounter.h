@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-#import "UHRModuleInterface.h"
+#import "UHRModule.h"
 #import "UHRModuleCounterInterface.h"
 
-@interface UHRModuleCounter : NSObject <UHRModuleInterface>
+@interface UHRModuleCounter : UHRModule
 
 @end

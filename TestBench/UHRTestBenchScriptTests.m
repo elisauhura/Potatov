@@ -57,6 +57,8 @@ static BOOL callbackCalled = NO;
 
 - (void)testApply {
     id mockedModule = OCMProtocolMock(@protocol(UHRModuleInterface));
+    OCMStub([mockedModule signalNames]).andReturn(nil);
+    
     [_script applyOnRiseChangesToModule:mockedModule atTime:1];
     [_script applyOnFallChangesToModule:mockedModule atTime:1];
     
@@ -104,8 +106,8 @@ static BOOL callbackCalled = NO;
     options.strict = YES;
     options.issueMatcher = ^ BOOL(XCTIssue *issue) {
         if(issue.type == XCTIssueTypeAssertionFailure &&
-           ([issue.compactDescription isEqualTo:@"failed - checkOnHigh failed @5; signal 0 returned 2 when expecting 1."] ||
-           [issue.compactDescription isEqualTo:@"failed - checkOnLow failed @5; signal 99 returned 3 when expecting 1."])) {
+           ([issue.compactDescription isEqualTo:@"failed - checkOnHigh failed @5; signal (null)(0) returned 2 when expecting 1."] ||
+           [issue.compactDescription isEqualTo:@"failed - checkOnLow failed @5; signal (null)(99) returned 3 when expecting 1."])) {
             return YES;
         }
         return NO;

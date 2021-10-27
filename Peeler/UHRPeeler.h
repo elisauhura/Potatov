@@ -13,3 +13,4 @@
 #import "UHRModuleALU.h"
 #import "UHRModuleCore.h"
 #import "UHRModuleSoftPackage.h"
+#import "UHRModuleFIFO.h"

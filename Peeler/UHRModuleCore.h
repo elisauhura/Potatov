@@ -6,7 +6,7 @@
 //  Copyright © 2021 Uhura. All rights reserved.
 //
 
-#import "UHRModuleInterface.h"
+#import "UHRModule.h"
 #import "UHRModuleCoreInterface.h"
 
 typedef NS_ENUM(NSUInteger, UHRModuleCoreState) {
@@ -16,6 +16,6 @@ typedef NS_ENUM(NSUInteger, UHRModuleCoreState) {
     UHRModuleCoreStateStall = 999
 };
 
-@interface UHRModuleCore : NSObject <UHRModuleInterface>
+@interface UHRModuleCore : UHRModule
 
 @end
