@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4C5FC8AB270EB8BB00B1C18A"
-               BuildableName = "libTestBench.dylib"
-               BlueprintName = "TestBench"
+               BlueprintIdentifier = "4CA2C7C427276FF900E1F5B7"
+               BuildableName = "Program Builder"
+               BlueprintName = "Program Builder"
                ReferencedContainer = "container:PotatoChip.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -50,9 +50,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4C5FC8AB270EB8BB00B1C18A"
-            BuildableName = "libTestBench.dylib"
-            BlueprintName = "TestBench"
+            BlueprintIdentifier = "4CA2C7C427276FF900E1F5B7"
+            BuildableName = "Program Builder"
+            BlueprintName = "Program Builder"
             ReferencedContainer = "container:PotatoChip.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
