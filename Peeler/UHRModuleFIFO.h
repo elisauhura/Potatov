@@ -9,6 +9,6 @@
 #import "UHRModule.h"
 #import "UHRModuleFIFOInterface.h"
 
-@interface UHRModuleFIFO : UHRModule <UHRModuleInterface>
+@interface UHRModuleFIFO : UHRModule
 
 @end

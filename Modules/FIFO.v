@@ -52,10 +52,11 @@ always @(posedge clock) begin
         full <= 0;
     end else begin
         if(cPop && cPush) begin
-            hByte <= buffer[readHead];
+            hByte <= (hEmpty) ?
+                cByte : buffer[readHead];
             readHead <= readHead + 1;
             buffer[writeHead] <= cByte;
-            writeHead <= writeHead + 1;
+            writeHead <= writeHeadNext;
         end else if(cPop) begin
             if(writeHead != readHead || full) begin
                 hByte <= buffer[readHead];
@@ -66,7 +67,7 @@ always @(posedge clock) begin
             if(!full) begin
                 buffer[writeHead] <= cByte;
                 full <= writeHeadNext == readHead;
-                writeHead <= writeHead + 1;
+                writeHead <= writeHeadNext;
             end
         end
     end

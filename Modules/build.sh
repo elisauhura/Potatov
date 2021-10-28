@@ -17,5 +17,6 @@ make ALU.dylib &&
 make Core.dylib &&
 make SoftPackage.dylib &&
 make FIFO.dylib &&
+make UART.dylib &&
 # always last
 make verilator.dylib

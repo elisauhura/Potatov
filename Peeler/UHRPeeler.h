@@ -14,3 +14,4 @@
 #import "UHRModuleCore.h"
 #import "UHRModuleSoftPackage.h"
 #import "UHRModuleFIFO.h"
+#import "UHRModuleUART.h"

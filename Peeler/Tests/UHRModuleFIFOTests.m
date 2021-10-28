@@ -147,7 +147,7 @@
     for(int i = 0; i < 4; i++) {
         script[@(base++)] = @{
             @"applyOnRise": @[
-                @(UHRModuleFIFOSignalCByte), @(i),
+                @(UHRModuleFIFOSignalCByte), @(i+128),
                 @(UHRModuleFIFOSignalCPush), @(1)
             ]
         };
@@ -172,7 +172,7 @@
                 @(UHRModuleFIFOSignalCPop), @(1)
             ],
             @"checkOnHigh": @[
-                @(UHRModuleFIFOSignalHByte), @(i),
+                @(UHRModuleFIFOSignalHByte), @(i+128),
             ]
         };
     }
