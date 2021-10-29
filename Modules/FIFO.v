@@ -45,7 +45,6 @@ assign hEmpty = readHead == writeHead && !full;
 assign writeHeadNext = writeHead + 1;
 
 always @(posedge clock) begin
-    int i;
     if(reset) begin
         readHead <= 0;
         writeHead <= 0;

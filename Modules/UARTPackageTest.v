@@ -17,20 +17,20 @@ input rx;
 input reset;
 input clock;
 
-reg [7:0]byte;
+wire [7:0]byte;
 reg write;
 reg read;
 
 UART uart(
     .cByte(byte),
-    .cRead(),
+    .cRead(read),
     .cWrite(write),
     .hByte(),
     .hCanRead(),
     .hCanWrite(),
     .tx(tx),
     .rx(rx),
-    .reset(reset),
+    .reset(reset == 0),
     .clock(clock)
 );
 
@@ -40,7 +40,6 @@ always @(posedge clock) begin
     end
     if(read == 1) begin
         read <= 0;
-        byte <= (uart.hByte > 96 && uart.hByte < 123) ? uart.hByte - 32 : uart.hByte;
         write <= 1;
     end
     if(write == 1) begin
@@ -48,5 +47,6 @@ always @(posedge clock) begin
     end
 end
 
+assign byte = (uart.hByte >= 'd97 && uart.hByte <= 'd122) ? uart.hByte - 'd32 : uart.hByte;
 
 endmodule

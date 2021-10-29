@@ -5,6 +5,12 @@
 
 `include "FIFO.v"
 
+`define CLOCK 50_000_000
+`define BAUD 9_600
+`define PERIOD 5_208
+`define HALF_PERIOD 2_604
+`define PERIODWIDTH 13
+
 module UART_TX(
     cByte,
     cWrite,
@@ -21,13 +27,8 @@ output tx;
 input reset;
 input clock;
 
-parameter CLOCK = 50_000_000;
-parameter BAUD = 9_600;
-localparam PERIOD = CLOCK/BAUD;
-localparam PERIODWIDTH = $clog2(PERIOD);
-
 reg [9:0]transmissionByte;
-reg [PERIODWIDTH-1:0]count;
+reg [`PERIODWIDTH-1:0]count;
 reg [3:0]state;
 
 assign hCanWrite = state == 0;
@@ -40,15 +41,15 @@ always @(posedge clock) begin
     end else begin
         if(state == 0) begin
             if(cWrite) begin
-                transmissionByte <= {1'1, cByte, 1'0};
+                transmissionByte <= {1'b1, cByte, 1'b0};
                 state <= 10;
-                count <= PERIODWIDTH'(PERIOD - 1);
+                count <= (`PERIOD - 1);
             end
         end else begin
             if(count == 0) begin
                 state <= state - 1;
-                count <= PERIODWIDTH'(PERIOD - 1);
-                transmissionByte <= {1'1, transmissionByte[9:1]};
+                count <= (`PERIOD - 1);
+                transmissionByte <= {1'b1, transmissionByte[9:1]};
             end else begin
                 count <= count - 1;
             end
@@ -67,18 +68,12 @@ module UART_RX(
 );
 
 output [7:0]hByte;
-output reg      hRead;
+output      hRead;
 input rx;
 input reset;
 input clock;
 
-parameter CLOCK = 50_000_000;
-parameter BAUD = 9_600;
-localparam PERIOD = CLOCK/BAUD;
-localparam PERIODWIDTH = $clog2(PERIOD);
-localparam HALF_PERIOD = PERIOD/2;
-
-reg [PERIODWIDTH-1:0]count;
+reg [`PERIODWIDTH-1:0]count;
 reg [3:0]state;
 reg [8:0]rxByte;
 reg      read;
@@ -97,7 +92,7 @@ always @(posedge clock) begin
             read <= 0;
             if(readBuffer == 8'b11111111) begin
                 state <= 10;
-                count <= PERIODWIDTH'(HALF_PERIOD - 1);
+                count <= (`HALF_PERIOD - 1);
             end
         end else if(state > 0) begin
             if(count == 0) begin
@@ -105,7 +100,7 @@ always @(posedge clock) begin
                     read <= 1;
                 end
                 rxByte <= {rx, rxByte[8:1]};
-                count <= PERIODWIDTH'(PERIOD - 1);
+                count <= (`PERIOD - 1);
                 state <= state - 1;
             end else begin
                 count <= count - 1;
@@ -140,18 +135,12 @@ input rx;
 input reset;
 input clock;
 
-parameter CLOCK = 50_000_000;
-parameter BAUD = 9_600;
-
 wire [7:0]rxByte;
 wire rxRead;
 wire popToTX;
 reg writeToTX;
 
-UART_RX #(
-    .CLOCK(CLOCK),
-    .BAUD(BAUD)
-) _rx(
+UART_RX _rx(
     .hByte(rxByte),
     .hRead(rxRead),
     .rx(rx),
@@ -163,7 +152,7 @@ FIFO rxFIFO(
     .cByte(rxByte),
     .cPush(rxRead),
     .cPop(cRead),
-    .hByte(),
+    .hByte(hByte),
     .hFull(),
     .hEmpty(),
     .reset(reset),
@@ -181,10 +170,7 @@ FIFO txFIFO(
     .clock(clock)
 );
 
-UART_TX #(
-    .CLOCK(CLOCK),
-    .BAUD(BAUD)
-) _tx(
+UART_TX _tx(
     .cByte(txFIFO.hByte),
     .cWrite(writeToTX),
     .hCanWrite(),
@@ -193,11 +179,10 @@ UART_TX #(
     .clock(clock)
 );
 
-assign hByte = rxFIFO.hByte;
 assign hCanRead = !rxFIFO.hEmpty;
 assign hCanWrite = !txFIFO.hFull;
 
-assign popToTX = !txFIFO.hEmpty && _tx.hCanWrite && !writeToTX;
+assign popToTX = _tx.hCanWrite && !txFIFO.hEmpty && !writeToTX;
 
 always @(posedge clock) begin
     if(reset) begin
