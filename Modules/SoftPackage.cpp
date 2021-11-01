@@ -104,7 +104,7 @@ uint32_t UHRPeekSoftPackage(void *_module, int signal) {
         case UHRModuleSoftPackageSignalState:
             return (uint32_t)module->top->SoftPackage->core->state;
         case UHRModuleSoftPackageSignalInstruction:
-            return (uint32_t)module->top->SoftPackage->core->instruction;
+            return (uint32_t)module->top->SoftPackage->core->Instruction;
         case UHRModuleSoftPackageSignalMemoryID:
             return (uint32_t)module->top->SoftPackage->memory->ID;
     }

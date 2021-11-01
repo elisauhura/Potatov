@@ -14,7 +14,7 @@ module SoftPackage(
 input clock;
 input reset;
 
-wire  [3:0]cCommand /* verilator public */;
+wire  [2:0]cCommand /* verilator public */;
 wire [31:0]cAddress /* verilator public */;
 wire [31:0]cData /* verilator public */;
 wire       hReady /* verilator public */;
