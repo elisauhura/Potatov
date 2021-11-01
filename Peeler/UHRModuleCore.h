@@ -12,8 +12,10 @@
 typedef NS_ENUM(NSUInteger, UHRModuleCoreState) {
     UHRModuleCoreStateInit,
     UHRModuleCoreStateFetch,
-    UHRModuleCoreStateFetchWaitReady,
-    UHRModuleCoreStateStall = 999
+    UHRModuleCoreStateExecute,
+    UHRModuleCoreStateReadWriteHandle,
+    UHRModuleCoreStateTrapHandle,
+    UHRModuleCoreStateStall
 };
 
 @interface UHRModuleCore : UHRModule

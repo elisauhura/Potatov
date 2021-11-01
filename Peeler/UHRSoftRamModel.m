@@ -55,37 +55,30 @@ static unsigned int softRamHandler (unsigned int source, unsigned int request, u
     UInt32 ret = 0;
     
     switch(command) {
-        case UHRMemoryInterfaceCommandRBA:
-        case UHRMemoryInterfaceCommandRBB:
+        case UHRMemoryInterfaceCommandReadByte:
             width = 1;
             goto read;
-        case UHRMemoryInterfaceCommandRSA:
-        case UHRMemoryInterfaceCommandRSB:
+        case UHRMemoryInterfaceCommandReadShort:
             width = 2;
             goto read;
-        case UHRMemoryInterfaceCommandRWA:
-        case UHRMemoryInterfaceCommandRWB:
+        case UHRMemoryInterfaceCommandReadWord:
             width = 4;
         read:
             ret = [self readAtAddress:address withWidth:width];
             break;
-        case UHRMemoryInterfaceCommandWBA:
-        case UHRMemoryInterfaceCommandWBB:
+        case UHRMemoryInterfaceCommandWriteByte:
             width = 1;
             goto write;
-        case UHRMemoryInterfaceCommandWSA:
-        case UHRMemoryInterfaceCommandWSB:
+        case UHRMemoryInterfaceCommandWriteShort:
             width = 2;
             goto write;
-        case UHRMemoryInterfaceCommandWWA:
-        case UHRMemoryInterfaceCommandWWB:
+        case UHRMemoryInterfaceCommandWriteWord:
             width = 4;
         write:
             [self writeAtAddress:address withWidth:width value:data];
             break;
-        case UHRMemoryInterfaceCommandHAW:
-        case UHRMemoryInterfaceCommandDRA:
-        case UHRMemoryInterfaceCommandDRB:
+        case UHRMemoryInterfaceCommandNOP:
+        case UHRMemoryInterfaceCommandWait:
         default:
             break;
     }

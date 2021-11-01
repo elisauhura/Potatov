@@ -11,19 +11,11 @@
 /// @brief: Avaiable memory interface commands
 enum UHRMemoryInterfaceCommand {
     UHRMemoryInterfaceCommandNOP,
-    UHRMemoryInterfaceCommandRBA,
-    UHRMemoryInterfaceCommandRSA,
-    UHRMemoryInterfaceCommandRWA,
-    UHRMemoryInterfaceCommandDRA,
-    UHRMemoryInterfaceCommandWBA,
-    UHRMemoryInterfaceCommandWSA,
-    UHRMemoryInterfaceCommandWWA,
-    UHRMemoryInterfaceCommandHAW,
-    UHRMemoryInterfaceCommandRBB,
-    UHRMemoryInterfaceCommandRSB,
-    UHRMemoryInterfaceCommandRWB,
-    UHRMemoryInterfaceCommandDRB,
-    UHRMemoryInterfaceCommandWBB,
-    UHRMemoryInterfaceCommandWSB,
-    UHRMemoryInterfaceCommandWWB
+    UHRMemoryInterfaceCommandReadByte,
+    UHRMemoryInterfaceCommandReadShort,
+    UHRMemoryInterfaceCommandReadWord,
+    UHRMemoryInterfaceCommandWait,
+    UHRMemoryInterfaceCommandWriteByte,
+    UHRMemoryInterfaceCommandWriteShort,
+    UHRMemoryInterfaceCommandWriteWord
 };

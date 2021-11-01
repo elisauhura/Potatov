@@ -65,6 +65,3 @@ S means supervisor level access,
 H means hypervisor level access and
 M means machine level access.
 
-
-# NOTE 
-

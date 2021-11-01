@@ -33,29 +33,28 @@
 
 - (void)testFetchWithZeroDelay {
     UHRTestBench *testBench = [[UHRTestBench alloc] initWithModule:_module withScript:[UHRTestBenchScript scriptFromDictionary:@{
-        @(0): @{
+        @(1): @{
             @"applyOnRise": @[
                 @(UHRModuleCoreSignalHData), @(0b1111000100110111),
+                @(UHRModuleCoreSignalHReady), @(1)
             ],
             @"checkOnHigh": @[
+                @(UHRModuleCoreSignalCCommand), @(UHRMemoryInterfaceCommandReadWord),
                 @(UHRModuleCoreSignalState), @(UHRModuleCoreStateFetch)
             ]
         },
-        @(1): @{
-            @"applyOnRise": @[
-                @(UHRModuleCoreSignalHReady), @(1),
-            ],
+        @(2): @{
             @"checkOnHigh": @[
-                @(UHRModuleCoreSignalCCommand), @(UHRMemoryInterfaceCommandRWA),
+                @(UHRModuleCoreSignalCCommand), @(UHRMemoryInterfaceCommandNOP),
                 @(UHRModuleCoreSignalInstruction), @(0b1111000100110111)
             ]
         },
-        @(2): @{
+        @(3): @{
             @"pass": @{}
         }
     }]];
     
-    XCTAssertTrue([testBench runTestBenchUpToTime:3]);
+    XCTAssertTrue([testBench runTestBenchUpToTime:4]);
 }
 
 @end

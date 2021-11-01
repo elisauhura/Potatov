@@ -102,7 +102,7 @@ uint32_t UHRPeekCore(void *_module, int signal) {
         case UHRModuleCoreSignalState:
             return (uint32_t)module->top->Core->state;
         case UHRModuleCoreSignalInstruction:
-            return (uint32_t)module->top->Core->instruction;
+            return (uint32_t)module->top->Core->Instruction;
     }
     
     return 0;

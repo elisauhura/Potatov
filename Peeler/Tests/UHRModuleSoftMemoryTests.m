@@ -39,12 +39,12 @@
     
     NSMutableDictionary *script = [NSMutableDictionary new];
     int commands[6] = {
-        UHRMemoryInterfaceCommandRWA,
-        UHRMemoryInterfaceCommandRWB,
-        UHRMemoryInterfaceCommandRSA,
-        UHRMemoryInterfaceCommandRSB,
-        UHRMemoryInterfaceCommandRBA,
-        UHRMemoryInterfaceCommandRBB
+        UHRMemoryInterfaceCommandReadWord,
+        UHRMemoryInterfaceCommandReadWord,
+        UHRMemoryInterfaceCommandReadShort,
+        UHRMemoryInterfaceCommandReadShort,
+        UHRMemoryInterfaceCommandReadByte,
+        UHRMemoryInterfaceCommandReadByte
     };
     
     int addresses[6] = { 4, 0, 4, 0, 4, 0};
@@ -59,32 +59,37 @@
     
     
     for(int i = 0; i < 6; i++) {
-        script[@(i*3)] = @{
+        script[@(i*4)] = @{
             @"applyOnRise": @[
                 @(UHRModuleSoftMemorySignalCAddress),@(addresses[i]),
                 @(UHRModuleSoftMemorySignalCCommand),@(commands[i]),
             ]
         };
-        script[@(i*3+1)] = @{
+        script[@(i*4+1)] = @{
             @"checkOnHigh": @[
                 @(UHRModuleSoftMemorySignalHReady), @(0),
             ]
         };
-        script[@(i*3+2)] = @{
+        script[@(i*4+2)] = @{
             @"checkOnHigh": @[
                 @(UHRModuleSoftMemorySignalHReady), @(1),
                 @(UHRModuleSoftMemorySignalHData), @(values[i]),
             ]
         };
+        script[@(i*4+3)] = @{
+            @"applyOnRise": @[
+                @(UHRModuleSoftMemorySignalCCommand),@(UHRMemoryInterfaceCommandNOP),
+            ]
+        };
     }
     
-    script[@(18)] = @{
+    script[@(6*4)] = @{
         @"pass": @{}
     };
     
     UHRTestBench *testBench = [[UHRTestBench alloc] initWithModule:_module withScript:[UHRTestBenchScript scriptFromDictionary:script]];
     
-    XCTAssertTrue([testBench runTestBenchUpToTime:19]);
+    XCTAssertTrue([testBench runTestBenchUpToTime:6*4+1]);
 }
 
 - (void)testMemoryReadWithDelayOf0 {
@@ -94,12 +99,12 @@
     
     NSMutableDictionary *script = [NSMutableDictionary new];
     int commands[6] = {
-        UHRMemoryInterfaceCommandRWA,
-        UHRMemoryInterfaceCommandRWB,
-        UHRMemoryInterfaceCommandRSA,
-        UHRMemoryInterfaceCommandRSB,
-        UHRMemoryInterfaceCommandRBA,
-        UHRMemoryInterfaceCommandRBB
+        UHRMemoryInterfaceCommandReadWord,
+        UHRMemoryInterfaceCommandReadWord,
+        UHRMemoryInterfaceCommandReadShort,
+        UHRMemoryInterfaceCommandReadShort,
+        UHRMemoryInterfaceCommandReadByte,
+        UHRMemoryInterfaceCommandReadByte
     };
     
     int addresses[6] = { 4, 0, 4, 0, 4, 0};
@@ -114,7 +119,7 @@
     
     
     for(int i = 0; i < 6; i++) {
-        script[@(i)] = @{
+        script[@(i*2)] = @{
             @"applyOnRise": @[
                 @(UHRModuleSoftMemorySignalCAddress),@(addresses[i]),
                 @(UHRModuleSoftMemorySignalCCommand),@(commands[i]),
@@ -124,15 +129,20 @@
                 @(UHRModuleSoftMemorySignalHData), @(values[i]),
             ]
         };
+        script[@(i*2+1)] = @{
+            @"applyOnRise": @[
+                @(UHRModuleSoftMemorySignalCCommand),@(UHRMemoryInterfaceCommandNOP),
+            ]
+        };
     }
     
-    script[@(6)] = @{
+    script[@(6*2)] = @{
         @"pass": @{}
     };
     
     UHRTestBench *testBench = [[UHRTestBench alloc] initWithModule:_module withScript:[UHRTestBenchScript scriptFromDictionary:script]];
     
-    XCTAssertTrue([testBench runTestBenchUpToTime:7]);
+    XCTAssertTrue([testBench runTestBenchUpToTime:6*2+1]);
 }
 
 - (void)testMemoryWriteWithDelayOf2 {
@@ -142,12 +152,12 @@
     
     NSMutableDictionary *script = [NSMutableDictionary new];
     int commands[6] = {
-        UHRMemoryInterfaceCommandWWA,
-        UHRMemoryInterfaceCommandWWB,
-        UHRMemoryInterfaceCommandWSA,
-        UHRMemoryInterfaceCommandWSB,
-        UHRMemoryInterfaceCommandWBA,
-        UHRMemoryInterfaceCommandWBB
+        UHRMemoryInterfaceCommandWriteWord,
+        UHRMemoryInterfaceCommandWriteWord,
+        UHRMemoryInterfaceCommandWriteShort,
+        UHRMemoryInterfaceCommandWriteShort,
+        UHRMemoryInterfaceCommandWriteByte,
+        UHRMemoryInterfaceCommandWriteByte
     };
     
     int addresses[6] = { 0, 4, 8, 10, 12, 13};
@@ -162,32 +172,37 @@
     
     
     for(int i = 0; i < 6; i++) {
-        script[@(i*3)] = @{
+        script[@(i*4)] = @{
             @"applyOnRise": @[
                 @(UHRModuleSoftMemorySignalCAddress),@(addresses[i]),
                 @(UHRModuleSoftMemorySignalCCommand),@(commands[i]),
                 @(UHRModuleSoftMemorySignalCData),@(values[i])
             ]
         };
-        script[@(i*3+1)] = @{
+        script[@(i*4+1)] = @{
             @"checkOnHigh": @[
                 @(UHRModuleSoftMemorySignalHReady), @(0),
             ]
         };
-        script[@(i*3+2)] = @{
+        script[@(i*4+2)] = @{
             @"checkOnHigh": @[
                 @(UHRModuleSoftMemorySignalHReady), @(1),
             ]
         };
+        script[@(i*4+3)] = @{
+            @"applyOnRise": @[
+                @(UHRModuleSoftMemorySignalCCommand),@(UHRMemoryInterfaceCommandNOP),
+            ]
+        };
     }
     
-    script[@(18)] = @{
+    script[@(6*4)] = @{
         @"pass": @{}
     };
     
     UHRTestBench *testBench = [[UHRTestBench alloc] initWithModule:_module withScript:[UHRTestBenchScript scriptFromDictionary:script]];
     
-    XCTAssertTrue([testBench runTestBenchUpToTime:19]);
+    XCTAssertTrue([testBench runTestBenchUpToTime:6*4+1]);
     
     XCTAssert(memcmp(_ram.ramBytes, "aaaabbbbccddef", 14) == 0);
 }
@@ -199,12 +214,12 @@
     
     NSMutableDictionary *script = [NSMutableDictionary new];
     int commands[6] = {
-        UHRMemoryInterfaceCommandWWA,
-        UHRMemoryInterfaceCommandWWB,
-        UHRMemoryInterfaceCommandWSA,
-        UHRMemoryInterfaceCommandWSB,
-        UHRMemoryInterfaceCommandWBA,
-        UHRMemoryInterfaceCommandWBB
+        UHRMemoryInterfaceCommandWriteWord,
+        UHRMemoryInterfaceCommandWriteWord,
+        UHRMemoryInterfaceCommandWriteShort,
+        UHRMemoryInterfaceCommandWriteShort,
+        UHRMemoryInterfaceCommandWriteByte,
+        UHRMemoryInterfaceCommandWriteByte
     };
     
     int addresses[6] = { 0, 4, 8, 10, 12, 13};
@@ -219,7 +234,7 @@
     
     
     for(int i = 0; i < 6; i++) {
-        script[@(i)] = @{
+        script[@(i*2)] = @{
             @"applyOnRise": @[
                 @(UHRModuleSoftMemorySignalCAddress),@(addresses[i]),
                 @(UHRModuleSoftMemorySignalCCommand),@(commands[i]),
@@ -229,15 +244,20 @@
                 @(UHRModuleSoftMemorySignalHReady), @(1),
             ]
         };
+        script[@(i*2+1)] = @{
+            @"applyOnRise": @[
+                @(UHRModuleSoftMemorySignalCCommand),@(UHRMemoryInterfaceCommandNOP),
+            ]
+        };
     }
     
-    script[@(7)] = @{
+    script[@(6*2)] = @{
         @"pass": @{}
     };
     
     UHRTestBench *testBench = [[UHRTestBench alloc] initWithModule:_module withScript:[UHRTestBenchScript scriptFromDictionary:script]];
     
-    XCTAssertTrue([testBench runTestBenchUpToTime:8]);
+    XCTAssertTrue([testBench runTestBenchUpToTime:6*2+1]);
     
     XCTAssert(memcmp(_ram.ramBytes, "aaaabbbbccddef", 14) == 0);
 }

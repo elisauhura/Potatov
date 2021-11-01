@@ -241,7 +241,6 @@
 		4CA2C7D42727713400E1F5B7 /* UHRModuleSoftPackageInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UHRModuleSoftPackageInterface.h; sourceTree = "<group>"; };
 		4CA2C7D72727718B00E1F5B7 /* UHRModuleSoftPackage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UHRModuleSoftPackage.m; sourceTree = "<group>"; };
 		4CA2C7D82727718B00E1F5B7 /* UHRModuleSoftPackage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UHRModuleSoftPackage.h; sourceTree = "<group>"; };
-		4CA2C7DB272771C000E1F5B7 /* SoftPackage.v */ = {isa = PBXFileReference; lastKnownFileType = text; path = SoftPackage.v; sourceTree = "<group>"; };
 		4CA2C7DC272771D000E1F5B7 /* SoftPackage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SoftPackage.cpp; sourceTree = "<group>"; };
 		4CA2C7DD2727720400E1F5B7 /* SoftPackage.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = SoftPackage.dylib; sourceTree = "<group>"; };
 		4CCC4E2F272B19CA00C330E0 /* UHRModuleUARTInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UHRModuleUARTInterface.h; sourceTree = "<group>"; };
@@ -256,6 +255,7 @@
 		4CE91D752710FCF9000E4C50 /* SoftMemory.v */ = {isa = PBXFileReference; lastKnownFileType = text; path = SoftMemory.v; sourceTree = "<group>"; };
 		4CE91D7727110026000E4C50 /* MemoryInterface.v */ = {isa = PBXFileReference; lastKnownFileType = text; path = MemoryInterface.v; sourceTree = "<group>"; };
 		4CE91D7827110FF6000E4C50 /* ModuleDispatch.v */ = {isa = PBXFileReference; lastKnownFileType = text; path = ModuleDispatch.v; sourceTree = "<group>"; };
+		4CEE74D7272C8FB500DFA592 /* CoreSpec.x */ = {isa = PBXFileReference; lastKnownFileType = text; path = CoreSpec.x; sourceTree = "<group>"; };
 		4CFA10B3270F714F0061CF37 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = /Library/Frameworks/OCMock.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -439,7 +439,6 @@
 				4C26F7482717C6CC005A059E /* Core.v */,
 				4C26F7492717C6EE005A059E /* SoftPackage.v */,
 				4C26F74B27186A26005A059E /* Registers.v */,
-				4CA2C7DB272771C000E1F5B7 /* SoftPackage.v */,
 				4C4F96082718FCD700F2993E /* ALU.v */,
 				4C5C88B72728886C00375B85 /* UART.v */,
 				4C5C88B82728896C00375B85 /* FIFO.v */,
@@ -529,6 +528,7 @@
 			children = (
 				4CE91D6F2710B4E1000E4C50 /* .gitignore */,
 				4C5FC8B5270EB94E00B1C18A /* README.md */,
+				4CEE74D7272C8FB500DFA592 /* CoreSpec.x */,
 				4CE91D6E2710B372000E4C50 /* TestPlan.xctestplan */,
 				4C5FC862270EB74C00B1C18A /* Modules */,
 				4C5FC898270EB85300B1C18A /* Peeler */,

@@ -45,7 +45,7 @@
     UHRModuleDispatchManager *manager = [UHRModuleDispatchManager defaultDispatch];
     XCTAssert([manager dispatchFromSource:source
                                   request:UHRModuleDispatchRequestMemoryInterfaceGetDelayFor
-                                     arg0:UHRMemoryInterfaceCommandRBA
+                                     arg0:UHRMemoryInterfaceCommandReadByte
                                      arg1:0
                                      arg2:0] == 2);
     XCTAssert([manager dispatchFromSource:source
@@ -55,7 +55,7 @@
                                      arg2:0] == 2);
     XCTAssert([manager dispatchFromSource:source
                                   request:UHRModuleDispatchRequestMemoryInterfaceGetDelayFor
-                                     arg0:UHRMemoryInterfaceCommandWWB
+                                     arg0:UHRMemoryInterfaceCommandWriteWord
                                      arg1:0
                                      arg2:0] == 2);
 }
@@ -71,32 +71,32 @@
     
     XCTAssert([manager dispatchFromSource:source
                                   request:UHRModuleDispatchRequestMemoryInterfaceDoOperation
-                                     arg0:UHRMemoryInterfaceCommandRBA
+                                     arg0:UHRMemoryInterfaceCommandReadByte
                                      arg1:1
                                      arg2:0] == 'e');
     XCTAssert([manager dispatchFromSource:source
                                   request:UHRModuleDispatchRequestMemoryInterfaceDoOperation
-                                     arg0:UHRMemoryInterfaceCommandRBB
+                                     arg0:UHRMemoryInterfaceCommandReadByte
                                      arg1:3
                                      arg2:0] == 'f');
     XCTAssert([manager dispatchFromSource:source
                                   request:UHRModuleDispatchRequestMemoryInterfaceDoOperation
-                                     arg0:UHRMemoryInterfaceCommandRSA
+                                     arg0:UHRMemoryInterfaceCommandReadShort
                                      arg1:1
                                      arg2:0] == 0x6565);
     XCTAssert([manager dispatchFromSource:source
                                   request:UHRModuleDispatchRequestMemoryInterfaceDoOperation
-                                     arg0:UHRMemoryInterfaceCommandRSB
+                                     arg0:UHRMemoryInterfaceCommandReadShort
                                      arg1:3
                                      arg2:0] == 0x6466);
     XCTAssert([manager dispatchFromSource:source
                                   request:UHRModuleDispatchRequestMemoryInterfaceDoOperation
-                                     arg0:UHRMemoryInterfaceCommandRWA
+                                     arg0:UHRMemoryInterfaceCommandReadWord
                                      arg1:4
                                      arg2:0] == 0x64616564);
     XCTAssert([manager dispatchFromSource:source
                                   request:UHRModuleDispatchRequestMemoryInterfaceDoOperation
-                                     arg0:UHRMemoryInterfaceCommandRWB
+                                     arg0:UHRMemoryInterfaceCommandReadWord
                                      arg1:0
                                      arg2:0] == 0x66656562);
 }
@@ -109,32 +109,32 @@
     
     [manager dispatchFromSource:source
                         request:UHRModuleDispatchRequestMemoryInterfaceDoOperation
-                           arg0:UHRMemoryInterfaceCommandWBA
+                           arg0:UHRMemoryInterfaceCommandWriteByte
                            arg1:0
                            arg2:0x61];
     [manager dispatchFromSource:source
                         request:UHRModuleDispatchRequestMemoryInterfaceDoOperation
-                           arg0:UHRMemoryInterfaceCommandWBB
+                           arg0:UHRMemoryInterfaceCommandWriteByte
                            arg1:1
                            arg2:0x62];
     [manager dispatchFromSource:source
                         request:UHRModuleDispatchRequestMemoryInterfaceDoOperation
-                           arg0:UHRMemoryInterfaceCommandWSA
+                           arg0:UHRMemoryInterfaceCommandWriteShort
                            arg1:2
                            arg2:0x6463];
     [manager dispatchFromSource:source
                         request:UHRModuleDispatchRequestMemoryInterfaceDoOperation
-                           arg0:UHRMemoryInterfaceCommandWSB
+                           arg0:UHRMemoryInterfaceCommandWriteShort
                            arg1:4
                            arg2:0x6665];
     [manager dispatchFromSource:source
                         request:UHRModuleDispatchRequestMemoryInterfaceDoOperation
-                           arg0:UHRMemoryInterfaceCommandWWA
+                           arg0:UHRMemoryInterfaceCommandWriteWord
                            arg1:6
                            arg2:0x6A696867];
     [manager dispatchFromSource:source
                         request:UHRModuleDispatchRequestMemoryInterfaceDoOperation
-                           arg0:UHRMemoryInterfaceCommandWWB
+                           arg0:UHRMemoryInterfaceCommandWriteWord
                            arg1:10
                            arg2:0x6E6D6C6B];
     
@@ -154,22 +154,9 @@
     
     XCTAssert([manager dispatchFromSource:source
                                   request:UHRModuleDispatchRequestMemoryInterfaceDoOperation
-                                     arg0:UHRMemoryInterfaceCommandDRA
+                                     arg0:UHRMemoryInterfaceCommandWait
                                      arg1:1
                                      arg2:0] == 0);
-    
-    XCTAssert([manager dispatchFromSource:source
-                                  request:UHRModuleDispatchRequestMemoryInterfaceDoOperation
-                                     arg0:UHRMemoryInterfaceCommandDRB
-                                     arg1:1
-                                     arg2:0] == 0);
-    
-    XCTAssert([manager dispatchFromSource:source
-                                  request:UHRModuleDispatchRequestMemoryInterfaceDoOperation
-                                     arg0:UHRMemoryInterfaceCommandHAW
-                                     arg1:1
-                                     arg2:0] == 0);
-    
 }
 
 @end
