@@ -26,6 +26,9 @@ enum UHRModuleCoreSignal {
     UHRModuleCoreSignalPC,
     UHRModuleCoreSignalState,
     UHRModuleCoreSignalInstruction,
+    UHRModuleCoreSignalReg1,
+    UHRModuleCoreSignalReg31 = UHRModuleCoreSignalReg1 + 30,
+    
 };
 
 void * UHRMakeCore(void);

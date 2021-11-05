@@ -25,8 +25,19 @@
 
 `define InstructionFetchF3ADD          'd0
 `define InstructionFetchF3SUB          'd0
+`define InstructionFetchF3ADDSUB       'd0
 `define InstructionFetchF3ADDI         'd0
-`define InstructionFetchF3SRLSRA       'd3
+`define InstructionFetchF3SLT          'd2
+`define InstructionFetchF3SLTU         'd3
+`define InstructionFetchF3XOR          'd4
+`define InstructionFetchF3SRLSRA       'd5
+
+`define InstructionFetchF3BEQ          'd0
+`define InstructionFetchF3BNE          'd1
+`define InstructionFetchF3BLT          'd4
+`define InstructionFetchF3BGE          'd5
+`define InstructionFetchF3BLTU         'd6
+`define InstructionFetchF3BGEU         'd7
 
 `define InstructionFetchF7ADD          'd0
 `define InstructionFetchF7SUB          'd32

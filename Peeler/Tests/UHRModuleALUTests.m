@@ -28,6 +28,8 @@ enum ALUInstructions{
     OR,
     AND,
     SUB,
+    SGE = 10,
+    SGEU,
     SRA = 13
 };
 
@@ -59,7 +61,12 @@ enum ALUInstructions{
         24, SRL,  3,  3,
          3, OR ,  4,  7,
          7, AND,  4,  4,
-        -24,SRA,  4, -2
+       -24, SRA,  4, -2,
+       -10, SGE,-11, 1,
+       -10, SGE, 10, 0,
+       -10, SGEU,-1, 0,
+        -1, SGEU,-1, 1,
+        -1, SGE ,-1, 1,
     };
     
     int numberOfOperations = (sizeof operations/sizeof operations[0])/4;

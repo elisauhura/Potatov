@@ -15,13 +15,7 @@
 {
     self = [super init];
     if (self) {
-        self.module = UHRMakeCore();
-        self.destroy = UHRDestroyCore;
-        self.poke = UHRPokeCore;
-        self.peek = UHRPeekCore;
-        self.eval = UHREvalCore;
-        self.clockSignal = UHRModuleCoreSignalClock;
-        self.signalNames = @{
+        NSMutableDictionary *signals = [@{
             @(UHRModuleCoreSignalNone): @"none",
             @(UHRModuleCoreSignalCCommand): @"cCommand",
             @(UHRModuleCoreSignalCAddress): @"cAddress",
@@ -34,7 +28,19 @@
             @(UHRModuleCoreSignalPC): @"pc",
             @(UHRModuleCoreSignalState): @"state",
             @(UHRModuleCoreSignalInstruction): @"instruction",
-        };
+        } mutableCopy];
+        
+        for(int i = 1; i < 32; i++) {
+            signals[@(UHRModuleCoreSignalReg1 + i - 1)] = [NSString stringWithFormat:@"x%02d", i];
+        }
+        
+        self.module = UHRMakeCore();
+        self.destroy = UHRDestroyCore;
+        self.poke = UHRPokeCore;
+        self.peek = UHRPeekCore;
+        self.eval = UHREvalCore;
+        self.clockSignal = UHRModuleCoreSignalClock;
+        self.signalNames = [signals copy];
     }
     return self;
 }

@@ -20,8 +20,8 @@ output [31:0]out;
 assign out = 
     (funct3 == 3'b000) ? (funct7_5b ? a - b : a + b) : // SUB : ADD
     (funct3 == 3'b001) ? (a << b[4:0]) : // SLL (shift left logical)
-    (funct3 == 3'b010) ? ($signed(a) < $signed(b) ? 1 : 0) : // SLT (set less than [signed])
-    (funct3 == 3'b011) ? (a < b ? 1 : 0) : // SLTU (set less than unsigned)
+    (funct3 == 3'b010) ? (funct7_5b ? ($signed(a) >= $signed(b) ? 1 : 0) : ($signed(a) < $signed(b) ? 1 : 0)) : // SLT (set less than [signed])
+    (funct3 == 3'b011) ? (funct7_5b ? (a >= b ? 1 : 0) : (a < b ? 1 : 0)) : // SLTU (set less than unsigned)
     (funct3 == 3'b100) ? (a ^ b) : // XOR
     (funct3 == 3'b101) ? (funct7_5b ? $signed($signed(a) >>> b[4:0]) : a >> b[4:0]) : // SRA : SRL
     (funct3 == 3'b110) ? (a | b) : // OR

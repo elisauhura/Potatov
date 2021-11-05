@@ -12,6 +12,7 @@ extern "C" {
 
 #include "obj_dir/VCore.h"
 #include "obj_dir/VCore_Core.h"
+#include "obj_dir/VCore_Registers.h"
 #include <verilated_vcd_c.h>
 
 namespace UHR {
@@ -85,6 +86,11 @@ void UHRPokeCore(void * _module, int signal, uint32_t value) {
 uint32_t UHRPeekCore(void *_module, int signal) {
     if(_module == NULL) return 0;
     UHR::Core * module = (UHR::Core *)_module;
+    
+    if(signal >= UHRModuleCoreSignalReg1 &&
+       signal <= UHRModuleCoreSignalReg31) {
+        return (uint32_t)module->top->Core->registers->registers[signal-UHRModuleCoreSignalReg1];
+    }
     
     switch (signal) {
         case UHRModuleCoreSignalCCommand:
