@@ -16,6 +16,8 @@ typedef NS_ENUM(UHRWord, UHRRISCVOPCode) {
     UHRRISCVOPCodeJAL    = 0b1101111,
     UHRRISCVOPCodeJALR   = 0b1100111,
     UHRRISCVOPCodeBRANCH = 0b1100011,
+    UHRRISCVOPCodeLOAD   = 0b0000011,
+    UHRRISCVOPCodeSTORE  = 0b0100011,
 };
 
 typedef NS_ENUM(UHRWord, UHRRISCVF3) {
@@ -38,6 +40,11 @@ typedef NS_ENUM(UHRWord, UHRRISCVF3) {
     UHRRISCVF3BGE    = 0b101,
     UHRRISCVF3BLTU   = 0b110,
     UHRRISCVF3BGEU   = 0b111,
+    UHRRISCVF3LB     = 0b000,
+    UHRRISCVF3LBU    = 0b100,
+    UHRRISCVF3LH     = 0b001,
+    UHRRISCVF3LHU    = 0b101,
+    UHRRISCVF3LW     = 0b010,
 };
 
 typedef NS_ENUM(UHRWord, UHRRISCVF7) {
@@ -245,6 +252,27 @@ UHRWord generateBType(UHRWord opcode, UHRWord f3, UHRWord rs1, UHRWord rs2, UHRW
 + (UHRWord)bgeuWithRS1:(UHREnum)sourceRegister1 rs2:(UHREnum)sourceRegister2 imm:(UHRWord)aImmediate {
     return generateBType(UHRRISCVOPCodeBRANCH, UHRRISCVF3BGEU, sourceRegister1, sourceRegister2, aImmediate);
 }
+
++ (UHRWord)lbWithRD:(UHREnum)destinationRegister rs1:(UHREnum)sourceRegister imm:(UHRWord)aImmediate {
+    return generateIType(UHRRISCVOPCodeLOAD, UHRRISCVF3LB, destinationRegister, sourceRegister, aImmediate);
+}
+
++ (UHRWord)lhWithRD:(UHREnum)destinationRegister rs1:(UHREnum)sourceRegister imm:(UHRWord)aImmediate {
+    return generateIType(UHRRISCVOPCodeLOAD, UHRRISCVF3LH, destinationRegister, sourceRegister, aImmediate);
+}
+
++ (UHRWord)lwWithRD:(UHREnum)destinationRegister rs1:(UHREnum)sourceRegister imm:(UHRWord)aImmediate {
+    return generateIType(UHRRISCVOPCodeLOAD, UHRRISCVF3LW, destinationRegister, sourceRegister, aImmediate);
+}
+
++ (UHRWord)lbuWithRD:(UHREnum)destinationRegister rs1:(UHREnum)sourceRegister imm:(UHRWord)aImmediate {
+    return generateIType(UHRRISCVOPCodeLOAD, UHRRISCVF3LBU, destinationRegister, sourceRegister, aImmediate);
+}
+
++ (UHRWord)lhuWithRD:(UHREnum)destinationRegister rs1:(UHREnum)sourceRegister imm:(UHRWord)aImmediate {
+    return generateIType(UHRRISCVOPCodeLOAD, UHRRISCVF3LHU, destinationRegister, sourceRegister, aImmediate);
+}
+
 
 
 @end

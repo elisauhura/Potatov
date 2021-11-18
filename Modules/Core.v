@@ -59,10 +59,17 @@ reg branchToAltPC;
 reg jumpToReg2Imm;
 reg jumpToAltIfAluIsTrue;
 reg jumpToAltIfAluIsFalse;
-reg needsToRead;
-reg needsToWrite;
 reg const4ReplacesAluB;
 reg PCReplacesReg2;
+// TODO improve this
+reg LCSet;
+// Load Compute Write State Control bits
+reg LCWLoad;
+reg [1:0]LCWLoadWidth;
+reg LCWLoadUnsigned;
+reg [4:0]LCWLoadTarget;
+reg LCWLoadWriteBackFromTemp;
+reg [31:0]LCWLoadTemp;
 
 ALU alu(
     .a(alu_a),
@@ -89,7 +96,7 @@ Registers registers(
     .cReg1Address(reg1Address),
     .cReg2Address(reg2Address),
     .cRegDAddress(writeBack ? destinationRegister : 5'b0),
-    .cRegDData(alu.out),
+    .cRegDData(LCWLoadWriteBackFromTemp ? LCWLoadTemp : alu.out),
     .hReg1Data(),
     .hReg2Data(),
     .reset(reset),
@@ -137,13 +144,12 @@ always @(posedge clock) begin
     addPCToALUA <= 0;
     oldPC <= PC;
     effectiveState <= state;
-    needsToRead <= 0;
-    needsToWrite <= 0;
     const4ReplacesAluB <= 0;
     jumpToReg2Imm <= 0;
     PCReplacesReg2 <= 0;
     jumpToAltIfAluIsTrue <= 0;
     jumpToAltIfAluIsFalse <= 0;
+    LCWLoadWriteBackFromTemp <= 0;
     
 // ----- RESET --------------------------------------------------
     if(reset) begin
@@ -156,6 +162,8 @@ always @(posedge clock) begin
             PC <= 'h800;
             cCommand <= `MemoryInterfaceCommandNOP;
             state <= `CoreStateFetch;
+            LCSet <= 0;
+            LCWLoad <= 0;
 
 // ----- FETCH --------------------------------------------------
         end else if(state == `CoreStateFetch) begin
@@ -254,25 +262,6 @@ always @(posedge clock) begin
                             state <= `CoreStateFetch;
                         end
                     end
-                    
-                // --- OP ----------------------------------------
-                    /*`InstructionFetchOPOP: begin
-                    
-                        writeBack <= 1;
-                        addImmToALUB <= 0;
-                        addPCToALUA <= 0;
-                        
-                        destinationRegister <= rd;
-                        reg1Address <= rs1;
-                        reg2Address <= rs2;
-                        
-                        alu_funct3 <= funct3;
-                        alu_funct7_5b <= funct7[5];
-                        
-                        PC <= PC + 4;
-                    
-                        state <= `CoreStateFetch;
-                    end*/
                     
                 // --- OP ----------------------------------------
                     `InstructionFetchOPOP: begin
@@ -443,6 +432,36 @@ always @(posedge clock) begin
                         endcase
                     end
                     
+                
+                // --- LOAD ----------------------------------------
+                    `InstructionFetchOPLOAD: begin
+                        if(funct3[2:1] == 2'b11 || funct3[1:0] == 2'b11) begin
+                         //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                         // TODO: Add exception for bad instruction
+                         //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+                            state <= `CoreStateStall;
+                            
+                        end else begin
+                            LCWLoad <= 1;
+                            LCWLoadWidth <= funct3[1:0] + 1'b01;
+                            LCWLoadUnsigned <= funct3[2];
+                            LCWLoadTarget <= rd;
+
+                            addImmToALUB <= 1;
+                            
+                            reg1Address <= rs1;
+                            reg2Address <= 0;
+
+                            alu_funct3 <= `InstructionFetchF3ADD;
+                            alu_funct7_5b <= `InstructionFetchF7ADD;
+                        
+                            state <= `CoreStateReadWriteHandle;
+                        end
+                    
+                        
+                    end
+                    
                 // --- DEFAULT -----------------------------------
                     default: begin
                         state <= `CoreStateStall;
@@ -452,10 +471,33 @@ always @(posedge clock) begin
             
 // ----- READ WRITE ---------------------------------------------
         end else if(state == `CoreStateReadWriteHandle) begin
-        
+            if(LCWLoad) begin
+                if(cCommand == `MemoryInterfaceCommandNOP) begin
+                    if(hReady == 1) begin
+                        cCommand <= { 1'b0, LCWLoadWidth };
+                        cAddress <= alu.out;
+                    end 
+                end else if(hReady == 1) begin
+                    destinationRegister <= LCWLoadTarget;
+                    writeBack <= 1;
+
+                    LCWLoadTemp <= 
+                        (LCWLoadWidth == 'b01) ? {{24{LCWLoadUnsigned ? 1'b0 : hData[7]}}, hData[7:0]} :
+                        (LCWLoadWidth == 'b10) ? {{16{LCWLoadUnsigned ? 1'b0 : hData[15]}}, hData[15:0]} :
+                     /* (LCWLoadWidth == 'b11) */ hData;
+
+                    LCWLoadWriteBackFromTemp <= 1;
+                    LCWLoad <= 0;
+                    
+                    cCommand <= `MemoryInterfaceCommandNOP;
+
+                    PC <= PC + 4;
+                    state <= `CoreStateFetch;
+                end
+            end
 // ----- TRAP ---------------------------------------------------
         end else if(state == `CoreStateTrapHandle) begin
-        
+            
 // ----- STALL --------------------------------------------------
         end else if(state == `CoreStateStall) begin
         

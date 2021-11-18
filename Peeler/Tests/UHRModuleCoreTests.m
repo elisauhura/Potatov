@@ -359,5 +359,60 @@
     XCTAssertTrue([testBench runTestBenchUpToTime:end + 1]);
 }
 
+- (void)testExecuteLOAD {
+    NSMutableDictionary *script = [NSMutableDictionary new];
+    
+    UHRWord checks[] = {
+        /*-Intstruction------------------------------------|-Value-----|-Reg-|-Value-Loaded-|-Adress-*/
+        [UHRRISCVMiniAssembler lbuWithRD:1 rs1:0 imm:0xFF],  0x80,       0x1,  0x80,          0xFF,
+        [UHRRISCVMiniAssembler lbWithRD:2 rs1:1 imm:-0xF],   0x80,       0x2,  0xFFFFFF80,    0x71,
+        [UHRRISCVMiniAssembler lhWithRD:3 rs1:1 imm:-0x10],  0xFABC,     0x3,  0xFFFFFABC,    0x70,
+        [UHRRISCVMiniAssembler lhuWithRD:4 rs1:1 imm:0],     0xFABC,     0x4,  0xFABC,        0x80,
+        [UHRRISCVMiniAssembler lwWithRD:5 rs1:1 imm:0x20],   0xDEADBEEF, 0x5,  0xDEADBEEF,    0xA0,
+    };
+    
+    int args = 5;
+    int numberOfChecks = (sizeof checks/sizeof checks[0])/args;
+    int offset = 1;
+    int duration = 6;
+    int end = offset + numberOfChecks * duration + 2;
+    
+    for(int i = 0; i < numberOfChecks; i++) {
+        script[@(offset+i*duration)] = @{
+            @"applyOnRise": @[
+                @(UHRModuleCoreSignalHData), @(checks[i*args]),
+                @(UHRModuleCoreSignalHReady), @(1)
+            ]
+        };
+        script[@(offset+i*duration+4)] = @{
+            @"applyOnRise": @[
+                @(UHRModuleCoreSignalHData), @(checks[i*args + 1]),
+                @(UHRModuleCoreSignalHReady), @(0)
+            ],
+            @"checkOnHigh": @[
+                @(UHRModuleCoreSignalCAddress), @(checks[i*args+4])
+            ]
+        };
+        script[@(offset+i*duration+5)] = @{
+            @"applyOnRise": @[
+                @(UHRModuleCoreSignalHReady), @(1)
+            ]
+        };
+        
+        script[@(offset+i*duration+7)] = @{
+            @"checkOnHigh": @[
+                @(UHRModuleCoreSignalReg1 + checks[i*args+2] - 1), @(checks[i*args+3])
+            ]
+        };
+    }
+    
+    script[@(end)] = @{
+        @"pass": @{}
+    };
+    
+    UHRTestBench *testBench = [[UHRTestBench alloc] initWithModule:_module withScript:[UHRTestBenchScript scriptFromDictionary:script]];
+    
+    XCTAssertTrue([testBench runTestBenchUpToTime:end + 1]);
+}
 
 @end

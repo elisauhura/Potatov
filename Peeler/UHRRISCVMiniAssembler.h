@@ -45,4 +45,10 @@
 + (UHRWord)bltuWithRS1:(UHREnum)sourceRegister1 rs2:(UHREnum)sourceRegister2 imm:(UHRWord)aImmediate;
 + (UHRWord)bgeuWithRS1:(UHREnum)sourceRegister1 rs2:(UHREnum)sourceRegister2 imm:(UHRWord)aImmediate;
 
++ (UHRWord)lbWithRD:(UHREnum)destinationRegister rs1:(UHREnum)sourceRegister imm:(UHRWord)aImmediate;
++ (UHRWord)lhWithRD:(UHREnum)destinationRegister rs1:(UHREnum)sourceRegister imm:(UHRWord)aImmediate;
++ (UHRWord)lwWithRD:(UHREnum)destinationRegister rs1:(UHREnum)sourceRegister imm:(UHRWord)aImmediate;
++ (UHRWord)lbuWithRD:(UHREnum)destinationRegister rs1:(UHREnum)sourceRegister imm:(UHRWord)aImmediate;
++ (UHRWord)lhuWithRD:(UHREnum)destinationRegister rs1:(UHREnum)sourceRegister imm:(UHRWord)aImmediate;
+
 @end
