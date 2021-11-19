@@ -81,6 +81,11 @@ void UHRPokeCore(void * _module, int signal, uint32_t value) {
             module->top->clock = value;
             break;
     }
+    
+    if(signal >= UHRModuleCoreSignalReg1 &&
+       signal <= UHRModuleCoreSignalReg31) {
+        module->top->Core->registers->registers[signal-UHRModuleCoreSignalReg1] = value;
+    }
 }
 
 uint32_t UHRPeekCore(void *_module, int signal) {

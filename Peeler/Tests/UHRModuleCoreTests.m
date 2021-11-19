@@ -415,4 +415,63 @@
     XCTAssertTrue([testBench runTestBenchUpToTime:end + 1]);
 }
 
+- (void)testExecuteSTORE {
+    NSMutableDictionary *script = [NSMutableDictionary new];
+    
+    UHRWord checks[] = {
+     /*|-Padding-|-Width-|-SourceReg-|-AddressReg-|-Source-----|-Address-|-Offset-|=*/
+        0x0,       32,     0x2,        0x1,         0xDEADBEEF,  0xABCD,   0x0,
+        0x0,       32,     0x3,        0x2,         -0x42,       0xABCE,   -0x1,
+        0x0,       16,     0xF,        0x3,         0xDEAD,      0xFFFF,   0xFF,
+        0x0,       16,     0x10,       0xA,         0xBEEF,      0xFFFF,   0xFF,
+        0x0,       8,      0x1F,       0xB,         0xEF,        0xA,      0x0,
+        0x0,       8,      0x1E,       0xC,         0x42,        0xB,      -0x666,
+        0x0,       8,      0x1D,       0xD,         0x33,        0xC,      -0x9,
+    };
+    
+    int args = 7;
+    int numberOfChecks = (sizeof checks/sizeof checks[0])/args;
+    int offset = 1;
+    int duration = 6;
+    int end = offset + numberOfChecks * duration + 1;
+    
+    for(int i = 0; i < numberOfChecks; i++) {
+        checks[i*args] =
+            checks[i*args+1] == 32 ? [UHRRISCVMiniAssembler swWithRS1:checks[i*args+3] rs2:checks[i*args+2] imm:checks[i*args+6]]:
+            checks[i*args+1] == 16 ? [UHRRISCVMiniAssembler shWithRS1:checks[i*args+3] rs2:checks[i*args+2] imm:checks[i*args+6]]:
+         /* checks[i*args+1] ==  8 */[UHRRISCVMiniAssembler sbWithRS1:checks[i*args+3] rs2:checks[i*args+2] imm:checks[i*args+6]];
+        
+        script[@(offset+i*duration)] = @{
+            @"applyOnRise": @[
+                @(UHRModuleCoreSignalHData), @(checks[i*args]),
+                @(UHRModuleCoreSignalReg1+checks[i*args+3]-1), @(checks[i*args+5] - checks[i*args+6]),
+                @(UHRModuleCoreSignalReg1+checks[i*args+2]-1), @(checks[i*args+4]),
+                @(UHRModuleCoreSignalHReady), @(1)
+            ]
+        };
+        script[@(offset+i*duration+4)] = @{
+            @"applyOnRise": @[
+                @(UHRModuleCoreSignalHReady), @(0)
+            ],
+            @"checkOnHigh": @[
+                @(UHRModuleCoreSignalCAddress), @(checks[i*args+5]),
+                @(UHRModuleCoreSignalCData), @(checks[i*args+4])
+            ]
+        };
+        script[@(offset+i*duration+5)] = @{
+            @"applyOnRise": @[
+                @(UHRModuleCoreSignalHReady), @(1)
+            ]
+        };
+    }
+    
+    script[@(end)] = @{
+        @"pass": @{}
+    };
+    
+    UHRTestBench *testBench = [[UHRTestBench alloc] initWithModule:_module withScript:[UHRTestBenchScript scriptFromDictionary:script]];
+    
+    XCTAssertTrue([testBench runTestBenchUpToTime:end + 1]);
+}
+
 @end

@@ -51,4 +51,8 @@
 + (UHRWord)lbuWithRD:(UHREnum)destinationRegister rs1:(UHREnum)sourceRegister imm:(UHRWord)aImmediate;
 + (UHRWord)lhuWithRD:(UHREnum)destinationRegister rs1:(UHREnum)sourceRegister imm:(UHRWord)aImmediate;
 
++ (UHRWord)sbWithRS1:(UHREnum)sourceRegister1 rs2:(UHREnum)sourceRegister2 imm:(UHRWord)aImmediate;
++ (UHRWord)shWithRS1:(UHREnum)sourceRegister1 rs2:(UHREnum)sourceRegister2 imm:(UHRWord)aImmediate;
++ (UHRWord)swWithRS1:(UHREnum)sourceRegister1 rs2:(UHREnum)sourceRegister2 imm:(UHRWord)aImmediate;
+
 @end

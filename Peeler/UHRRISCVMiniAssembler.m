@@ -45,6 +45,9 @@ typedef NS_ENUM(UHRWord, UHRRISCVF3) {
     UHRRISCVF3LH     = 0b001,
     UHRRISCVF3LHU    = 0b101,
     UHRRISCVF3LW     = 0b010,
+    UHRRISCVF3SB     = 0b000,
+    UHRRISCVF3SH     = 0b001,
+    UHRRISCVF3SW     = 0b010,
 };
 
 typedef NS_ENUM(UHRWord, UHRRISCVF7) {
@@ -133,6 +136,18 @@ UHRWord generateBType(UHRWord opcode, UHRWord f3, UHRWord rs1, UHRWord rs2, UHRW
     
     return ret;
 }
+
+UHRWord generateSType(UHRWord opcode, UHRWord f3, UHRWord rs1, UHRWord rs2, UHRWord imm) {
+    UHRWord ret = imm >> 5;
+    ret = (ret << 5) | (rs2 & UHRRISCKVREGMASK);
+    ret = (ret << 5) | (rs1 & UHRRISCKVREGMASK);
+    ret = (ret << 3) | (f3 & 0b111);
+    ret = (ret << 5) | (imm & UHRRISCKVREGMASK);
+    ret = (ret << 7) | opcode;
+    
+    return ret;
+}
+
 
 @implementation UHRRISCVMiniAssembler
 
@@ -273,6 +288,17 @@ UHRWord generateBType(UHRWord opcode, UHRWord f3, UHRWord rs1, UHRWord rs2, UHRW
     return generateIType(UHRRISCVOPCodeLOAD, UHRRISCVF3LHU, destinationRegister, sourceRegister, aImmediate);
 }
 
++ (UHRWord)sbWithRS1:(UHREnum)sourceRegister1 rs2:(UHREnum)sourceRegister2 imm:(UHRWord)aImmediate {
+    return generateSType(UHRRISCVOPCodeSTORE, UHRRISCVF3SB, sourceRegister1, sourceRegister2, aImmediate);
+}
+
++ (UHRWord)shWithRS1:(UHREnum)sourceRegister1 rs2:(UHREnum)sourceRegister2 imm:(UHRWord)aImmediate {
+    return generateSType(UHRRISCVOPCodeSTORE, UHRRISCVF3SH, sourceRegister1, sourceRegister2, aImmediate);
+}
+
++ (UHRWord)swWithRS1:(UHREnum)sourceRegister1 rs2:(UHREnum)sourceRegister2 imm:(UHRWord)aImmediate {
+    return generateSType(UHRRISCVOPCodeSTORE, UHRRISCVF3SW, sourceRegister1, sourceRegister2, aImmediate);
+}
 
 
 @end
