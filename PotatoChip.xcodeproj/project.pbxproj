@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C17626A2757B360005A6B57 /* UHRModuleSoftPackageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1762692757B360005A6B57 /* UHRModuleSoftPackageTests.m */; };
 		4C26F6E92713EA87005A059E /* UHRModuleSoftMemoryInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C26F6E82713E928005A059E /* UHRModuleSoftMemoryInterface.h */; };
 		4C26F6EB2713EC21005A059E /* UHRModuleDispatch.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C26F6EA2713EC21005A059E /* UHRModuleDispatch.h */; };
 		4C26F6ED2713EE11005A059E /* UHRModuleDispatchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C26F6EC2713EE11005A059E /* UHRModuleDispatchManager.m */; };
@@ -152,6 +153,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4C1762692757B360005A6B57 /* UHRModuleSoftPackageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UHRModuleSoftPackageTests.m; sourceTree = "<group>"; };
 		4C26F6E72713E928005A059E /* SoftMemory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SoftMemory.cpp; sourceTree = "<group>"; };
 		4C26F6E82713E928005A059E /* UHRModuleSoftMemoryInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UHRModuleSoftMemoryInterface.h; sourceTree = "<group>"; };
 		4C26F6EA2713EC21005A059E /* UHRModuleDispatch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UHRModuleDispatch.h; sourceTree = "<group>"; };
@@ -464,6 +466,7 @@
 				4C4F96132719076800F2993E /* UHRModuleALUTests.m */,
 				4C5C88C82728F44400375B85 /* UHRModuleFIFOTests.m */,
 				4CCC4E3B272B32D500C330E0 /* UHRModuleUARTTests.m */,
+				4C1762692757B360005A6B57 /* UHRModuleSoftPackageTests.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -875,6 +878,7 @@
 				4C4F96072718BBA400F2993E /* UHRModuleCoreTests.m in Sources */,
 				4C906BB2270FE2C000A9D4E2 /* UHRModuleCounterTests.m in Sources */,
 				4C26F73A2714E227005A059E /* UHRModuleDispatchManagerTests.m in Sources */,
+				4C17626A2757B360005A6B57 /* UHRModuleSoftPackageTests.m in Sources */,
 				4C5C88C92728F44400375B85 /* UHRModuleFIFOTests.m in Sources */,
 				4C4F95FA271886C100F2993E /* UHRModuleRegistersTests.m in Sources */,
 				4C26F7472717A989005A059E /* UHRModuleSoftMemoryTests.m in Sources */,

@@ -490,6 +490,22 @@ always @(posedge clock) begin
                         end
                     end
                     
+                // --- FENCE -------------------------------------
+                    `InstructionFetchOPFENCE: begin
+                        if(funct3 != 3'b0) begin
+                         //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                         // TODO: Add exception for bad instruction
+                         //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+                            state <= `CoreStateStall;
+                            
+                        end else begin
+                        
+                            PC <= PC + 4;
+                            state <= `CoreStateFetch;
+                            
+                        end
+                    end
                     
                 // --- DEFAULT -----------------------------------
                     default: begin

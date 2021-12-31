@@ -10,5 +10,11 @@ echo "Programs Builder"
 
 echo "Building from: " `pwd`
 
+if [ `uname -m` = "arm64" ]; then
+    export RISCV="/opt/homebrew/Cellar/riscv-gnu-toolchain/master/bin/riscv64-unknown-elf-"
+else
+    export RISCV="/usr/local/Cellar/riscv-gnu-toolchain/master/bin/riscv64-unknown-elf-"
+fi
+
 make SAMPLE.bin &&
 make LUI.bin

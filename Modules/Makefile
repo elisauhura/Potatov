@@ -4,8 +4,6 @@
 #  Created by Elisa Silva on 07/10/21.
 #  Copyright © 2021 Uhura. All rights reserved.
 
-VERILATOR=/usr/local/bin/verilator
-VERILATOR_PATH=/usr/local/Cellar/verilator/4.200/share/verilator/include
 CCPP=clang++
 
 %.a: %.v %.cpp

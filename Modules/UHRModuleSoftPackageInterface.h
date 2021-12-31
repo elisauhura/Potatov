@@ -27,6 +27,8 @@ enum UHRModuleSoftPackageSignal {
     UHRModuleSoftPackageSignalState,
     UHRModuleSoftPackageSignalInstruction,
     UHRModuleSoftPackageSignalMemoryID,
+    UHRModuleSoftPackageSignalReg1,
+    UHRModuleSoftPackageSignalReg31 = UHRModuleSoftPackageSignalReg1 + 30,
 };
 
 void * UHRMakeSoftPackage(void);

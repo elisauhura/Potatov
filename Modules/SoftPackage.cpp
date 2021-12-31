@@ -13,6 +13,7 @@ extern "C" {
 #include "obj_dir/VSoftPackage.h"
 #include "obj_dir/VSoftPackage_SoftPackage.h"
 #include "obj_dir/VSoftPackage_Core.h"
+#include "obj_dir/VSoftPackage_Registers.h"
 #include "obj_dir/VSoftPackage_SoftMemory.h"
 #include <verilated_vcd_c.h>
 
@@ -76,11 +77,21 @@ void UHRPokeSoftPackage(void * _module, int signal, uint32_t value) {
             module->top->clock = value;
             break;
     }
+    
+    if(signal >= UHRModuleSoftPackageSignalReg1 &&
+       signal <= UHRModuleSoftPackageSignalReg31) {
+        module->top->SoftPackage->core->registers->registers[signal-UHRModuleSoftPackageSignalReg1] = value;
+    }
 }
 
 uint32_t UHRPeekSoftPackage(void *_module, int signal) {
     if(_module == NULL) return 0;
     UHR::SoftPackage * module = (UHR::SoftPackage *)_module;
+    
+    if(signal >= UHRModuleSoftPackageSignalReg1 &&
+       signal <= UHRModuleSoftPackageSignalReg31) {
+        return (uint32_t)module->top->SoftPackage->core->registers->registers[signal-UHRModuleSoftPackageSignalReg1];
+    }
     
     switch (signal) {
         case UHRModuleSoftPackageSignalCCommand:

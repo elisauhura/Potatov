@@ -16,10 +16,10 @@ input reset;
 
 wire  [2:0]cCommand /* verilator public */;
 wire [31:0]cAddress /* verilator public */;
-wire [31:0]cData /* verilator public */;
-wire       hReady /* verilator public */;
-wire       hSignal /* verilator public */;
-wire [31:0]hData /* verilator public */;
+wire [31:0]cData    /* verilator public */;
+wire       hReady   /* verilator public */;
+wire       hSignal  /* verilator public */;
+wire [31:0]hData    /* verilator public */;
 
 
 Core core(
